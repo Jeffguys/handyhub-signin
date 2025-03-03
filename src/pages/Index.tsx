@@ -11,31 +11,29 @@ import { Hammer, Bath, Sofa, Ruler, DoorOpen, Zap } from "lucide-react";
 const Index = () => {
   console.log("Index page rendering"); // Debug log
 
-  // Add smooth scrolling
   useEffect(() => {
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-        e.preventDefault();
-        const id = target.getAttribute('href')?.substring(1);
-        if (id) {
-          const element = document.getElementById(id);
-          if (element) {
-            window.scrollTo({
-              top: element.offsetTop - 100,
-              behavior: 'smooth'
-            });
-          }
-        }
-      }
-    };
+    console.log("Index page mounted");
     
-    document.addEventListener('click', handleAnchorClick);
-    return () => document.removeEventListener('click', handleAnchorClick);
+    // Force rendering a basic message if nothing else shows
+    const timer = setTimeout(() => {
+      console.log("Checking if page content is visible");
+      const contentCheck = document.querySelector('main');
+      
+      if (!contentCheck || contentCheck.children.length === 0) {
+        console.log("No content visible, showing emergency content");
+        document.body.innerHTML += `<div style="padding: 20px; text-align: center; background: white; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999;">
+          <h1 style="font-size: 24px; margin-bottom: 20px;">Truckee Meadows Handyman</h1>
+          <p>Emergency fallback content - please check the console for errors</p>
+        </div>`;
+      }
+    }, 3000);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
+      {console.log("Index rendering div content")}
       <div className="bg-primary text-white p-4 text-center">
         <h1 className="text-2xl font-bold">Truckee Meadows Handyman</h1>
         <p>Professional Handyman Services</p>
@@ -43,7 +41,19 @@ const Index = () => {
       
       <Navbar />
       <main className="flex-grow">
+        {console.log("About to render Hero component")}
+        <div style={{padding: "20px", textAlign: "center", marginTop: "40px"}}>
+          <h2 className="text-3xl font-bold">Emergency Content</h2>
+          <p className="mt-4">If you can see this, the Hero component might be causing issues.</p>
+          <Link to="/submit-job">
+            <Button size="lg" className="mt-4">Submit a Job Request</Button>
+          </Link>
+        </div>
+        
         <Hero />
+        
+        {/* Continue with the rest of the components */}
+        {console.log("About to render rest of Index page")}
         
         {/* About Company Section */}
         <section id="about" className="py-20 bg-background">

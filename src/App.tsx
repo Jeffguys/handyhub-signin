@@ -12,15 +12,27 @@ import JobSubmission from "./components/JobSubmission";
 const queryClient = new QueryClient();
 
 const App = () => {
-  console.log("App rendering - current path:", window.location.pathname); // Enhanced debug log
+  console.log("App component rendering");
   
   // Fallback content in case of routing issues
-  const FallbackContent = () => (
-    <div className="p-8 text-center">
-      <h1 className="text-2xl font-bold mb-4">Truckee Meadows Handyman</h1>
-      <p className="mb-4">Loading content...</p>
-    </div>
-  );
+  const FallbackContent = () => {
+    console.log("Rendering fallback content");
+    return (
+      <div className="p-8 text-center">
+        <h1 className="text-2xl font-bold mb-4">Truckee Meadows Handyman</h1>
+        <p className="mb-4">Loading content...</p>
+      </div>
+    );
+  };
+  
+  // Force fallback to display immediately for debugging
+  setTimeout(() => {
+    const fallbackContent = document.getElementById('fallback-content');
+    if (fallbackContent) {
+      console.log("Showing fallback content for debugging");
+      fallbackContent.style.display = 'block';
+    }
+  }, 2000);
   
   return (
     <QueryClientProvider client={queryClient}>
@@ -36,7 +48,7 @@ const App = () => {
           </Routes>
           
           {/* Fallback content that will show if routes fail to render */}
-          <div id="fallback-content" style={{ display: "none" }}>
+          <div id="fallback-content" style={{ display: "block" }}>
             <FallbackContent />
           </div>
         </BrowserRouter>
