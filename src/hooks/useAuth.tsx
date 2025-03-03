@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Session, User } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
@@ -25,18 +24,35 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("AuthProvider useEffect running");
     // Check active session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      setLoading(false);
-    });
+    const fetchSession = async () => {
+      try {
+        const { data, error } = await supabase.auth.getSession();
+        if (error) {
+          console.error("Error getting session:", error);
+          setSession(null);
+          setUser(null);
+        } else {
+          console.log("Session data:", data);
+          setSession(data.session);
+          setUser(data.session?.user ?? null);
+        }
+      } catch (e) {
+        console.error("Unexpected error in getSession:", e);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSession();
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
+      (event, newSession) => {
+        console.log("Auth state changed:", event, newSession);
+        setSession(newSession);
+        setUser(newSession?.user ?? null);
         setLoading(false);
       }
     );
@@ -137,9 +153,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  // Debug auth state
+  useEffect(() => {
+    console.log("Auth state:", { session, user, loading, error });
+  }, [session, user, loading, error]);
+
   return (
     <AuthContext.Provider value={{ session, user, loading, signIn, signUp, signOut, error }}>
-      {children}
+      {!loading ? children : <div>Loading authentication...</div>}
     </AuthContext.Provider>
   );
 };
