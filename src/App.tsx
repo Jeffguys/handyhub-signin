@@ -8,10 +8,20 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import JobSubmission from "./components/JobSubmission";
 
+// Create a new query client
 const queryClient = new QueryClient();
 
 const App = () => {
-  console.log("App rendering"); // Debug log
+  console.log("App rendering - current path:", window.location.pathname); // Enhanced debug log
+  
+  // Fallback content in case of routing issues
+  const FallbackContent = () => (
+    <div className="p-8 text-center">
+      <h1 className="text-2xl font-bold mb-4">Truckee Meadows Handyman</h1>
+      <p className="mb-4">Loading content...</p>
+    </div>
+  );
+  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -24,6 +34,11 @@ const App = () => {
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          
+          {/* Fallback content that will show if routes fail to render */}
+          <div id="fallback-content" style={{ display: "none" }}>
+            <FallbackContent />
+          </div>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
