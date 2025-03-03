@@ -25,7 +25,7 @@ const Hero = () => {
           >
             {/* Left text - "Got Work?" */}
             <div 
-              className={`font-bold text-2xl md:text-3xl lg:text-4xl text-primary transition-all duration-700 hover:scale-105 ${
+              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 ${
                 isLeftTextVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
               }`}
             >
@@ -43,7 +43,7 @@ const Hero = () => {
             
             {/* Right text - "5 Year Warranty" */}
             <div 
-              className={`font-bold text-2xl md:text-3xl lg:text-4xl text-primary transition-all duration-700 hover:scale-105 ${
+              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 ${
                 isRightTextVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               }`}
             >
