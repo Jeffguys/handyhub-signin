@@ -14,22 +14,22 @@ const Hero = () => {
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
       <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col items-center text-center space-y-10">
-          {/* Logo Image - Added Prominently */}
+        <div className="flex flex-col items-center text-center space-y-6">
+          {/* Logo Image - Adjusted to be wider and less tall */}
           <div 
-            className={`w-full max-w-xl mx-auto mb-8 transition-all duration-700 ${
+            className={`w-full max-w-2xl mx-auto mb-4 transition-all duration-700 ${
               isLogoVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
             <img
               src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
               alt="Truckee Meadows Handyman Logo"
-              className="w-full h-auto drop-shadow-2xl"
+              className="w-full h-auto max-h-[120px] object-contain drop-shadow-2xl"
             />
           </div>
           
-          {/* Job Submission Form - Moved here from Index */}
-          <div className="w-full mt-8">
+          {/* Job Submission Form - Moved closer to logo */}
+          <div className="w-full mt-2">
             <JobSubmission />
           </div>
           
