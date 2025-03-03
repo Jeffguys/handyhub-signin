@@ -25,12 +25,32 @@ const Hero = () => {
           >
             {/* Left text - "Got Work?" */}
             <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 ${
+              className={`font-bold text-4xl md:text-5xl lg:text-6xl transition-all duration-700 hover:scale-105 ${
                 isLeftTextVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
               }`}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-600">
-                Got Work?
+              <span className="
+                relative inline-block p-1
+                bg-gradient-to-br from-gray-300 to-gray-100
+                bg-clip-text text-transparent
+                shadow-lg
+                transform rotate-1
+                hover:rotate-0 transition-transform duration-300
+              ">
+                <span className="
+                  absolute inset-0 
+                  bg-gradient-to-r from-gray-400 via-gray-200 to-gray-300
+                  rounded-lg border border-gray-300
+                  transform -skew-x-3 -skew-y-1
+                  -z-10
+                  shadow-inner
+                "></span>
+                <span className="relative z-[5]">Got Work?</span>
+                {/* Rivets */}
+                <span className="absolute top-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
+                <span className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
+                <span className="absolute bottom-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
+                <span className="absolute bottom-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
               </span>
             </div>
             
@@ -43,12 +63,32 @@ const Hero = () => {
             
             {/* Right text - "5 Year Warranty" */}
             <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 ${
+              className={`font-bold text-4xl md:text-5xl lg:text-6xl transition-all duration-700 hover:scale-105 ${
                 isRightTextVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               }`}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-primary">
-                5 Year Warranty
+              <span className="
+                relative inline-block p-1
+                bg-gradient-to-br from-gray-300 to-gray-100
+                bg-clip-text text-transparent
+                shadow-lg
+                transform -rotate-1
+                hover:rotate-0 transition-transform duration-300
+              ">
+                <span className="
+                  absolute inset-0 
+                  bg-gradient-to-r from-gray-400 via-gray-200 to-gray-300
+                  rounded-lg border border-gray-300
+                  transform skew-x-3 -skew-y-1
+                  -z-10
+                  shadow-inner
+                "></span>
+                <span className="relative z-[5]">5 Year Warranty</span>
+                {/* Rivets */}
+                <span className="absolute top-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
+                <span className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
+                <span className="absolute bottom-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
+                <span className="absolute bottom-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
               </span>
             </div>
           </div>
