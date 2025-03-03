@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  console.log("Hero component rendering");
-  
   return (
     <section className="py-12 bg-background">
       <div className="container px-4 md:px-6 mx-auto">

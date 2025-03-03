@@ -5,8 +5,6 @@ import EmailForm from "@/components/EmailForm";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  console.log("Index page rendering");
-
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />

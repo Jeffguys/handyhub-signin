@@ -12,8 +12,6 @@ import JobSubmission from "./components/JobSubmission";
 const queryClient = new QueryClient();
 
 const App = () => {
-  console.log("App component rendering");
-  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -23,9 +21,9 @@ const App = () => {
             <Route path="/submit-job" element={<JobSubmission />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Toaster />
+          <Sonner />
         </BrowserRouter>
-        <Toaster />
-        <Sonner />
       </TooltipProvider>
     </QueryClientProvider>
   );
