@@ -1,11 +1,27 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, Wrench, Clock, Award } from 'lucide-react';
+import { Check, Wrench, Clock, Award, Camera, Upload, FileText } from 'lucide-react';
 import EmailForm from '@/components/EmailForm';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const HomePage = () => {
+  const [jobPhotos, setJobPhotos] = useState<File[]>([]);
+  const [previewUrls, setPreviewUrls] = useState<string[]>([]);
+
+  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files) return;
+    
+    const newFiles = Array.from(files);
+    setJobPhotos([...jobPhotos, ...newFiles]);
+    
+    // Create preview URLs
+    const newPreviewUrls = newFiles.map(file => URL.createObjectURL(file));
+    setPreviewUrls([...previewUrls, ...newPreviewUrls]);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -39,6 +55,118 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Job Info & Photo Upload Section */}
+      <section className="py-16 bg-secondary/20">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <Card className="shadow-xl animate-fade-in-up">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <FileText className="h-6 w-6 text-primary" />
+                  Get a Quick Quote
+                </CardTitle>
+                <CardDescription>
+                  Tell us about your project and upload photos to receive a fast, accurate quote.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-6">
+                  <div className="space-y-2">
+                    <label htmlFor="job-description" className="text-sm font-medium">
+                      Job Description
+                    </label>
+                    <textarea 
+                      id="job-description"
+                      className="w-full min-h-24 p-3 border rounded-md bg-white"
+                      placeholder="Describe what needs to be fixed or installed..."
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="job-location" className="text-sm font-medium">
+                      Location
+                    </label>
+                    <input 
+                      type="text"
+                      id="job-location"
+                      className="w-full p-3 border rounded-md bg-white"
+                      placeholder="Where is the job located?"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="job-timeline" className="text-sm font-medium">
+                      Preferred Timeline
+                    </label>
+                    <select 
+                      id="job-timeline"
+                      className="w-full p-3 border rounded-md bg-white"
+                    >
+                      <option value="">Select timeline...</option>
+                      <option value="urgent">Urgent (ASAP)</option>
+                      <option value="1week">Within 1 week</option>
+                      <option value="2weeks">Within 2 weeks</option>
+                      <option value="1month">Within 1 month</option>
+                      <option value="flexible">Flexible</option>
+                    </select>
+                  </div>
+                  <Button type="submit" className="w-full">
+                    Submit Request
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-xl animate-fade-in-up animation-delay-200">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Camera className="h-6 w-6 text-primary" />
+                  Upload Photos
+                </CardTitle>
+                <CardDescription>
+                  Add photos of the area or issue to help us assess your job more accurately
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="border-2 border-dashed border-primary/30 rounded-lg p-8 text-center hover:bg-primary/5 transition-colors cursor-pointer relative">
+                  <input 
+                    type="file" 
+                    id="photo-upload" 
+                    className="absolute inset-0 opacity-0 cursor-pointer" 
+                    accept="image/*" 
+                    multiple 
+                    onChange={handlePhotoUpload}
+                  />
+                  <Upload className="h-12 w-12 text-primary/70 mx-auto mb-4" />
+                  <h3 className="text-lg font-medium mb-2">Drag photos here or click to upload</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Support for JPG, PNG, HEIC (max 10MB each)
+                  </p>
+                </div>
+
+                {previewUrls.length > 0 && (
+                  <div className="space-y-4">
+                    <h3 className="font-medium">Uploaded Photos ({previewUrls.length})</h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                      {previewUrls.map((url, index) => (
+                        <div key={index} className="relative group aspect-square bg-secondary/30 rounded-md overflow-hidden">
+                          <img 
+                            src={url} 
+                            alt={`Uploaded job photo ${index + 1}`} 
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <Button variant="destructive" size="sm" className="text-xs">Remove</Button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
