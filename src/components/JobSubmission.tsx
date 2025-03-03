@@ -12,6 +12,11 @@ const JobSubmission = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [addressLine1, setAddressLine1] = useState('');
+  const [addressLine2, setAddressLine2] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zipCode, setZipCode] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -53,6 +58,11 @@ const JobSubmission = () => {
       setName('');
       setEmail('');
       setPhone('');
+      setAddressLine1('');
+      setAddressLine2('');
+      setCity('');
+      setState('');
+      setZipCode('');
       setDescription('');
       setImage(null);
       setImagePreview(null);
@@ -160,6 +170,50 @@ const JobSubmission = () => {
                       placeholder="(555) 123-4567"
                       className="w-full"
                     />
+                  </div>
+                  
+                  {/* Address Section */}
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Address</label>
+                    <div className="space-y-3">
+                      <Input
+                        type="text"
+                        placeholder="Address Line 1"
+                        value={addressLine1}
+                        onChange={(e) => setAddressLine1(e.target.value)}
+                        className="w-full"
+                      />
+                      <Input
+                        type="text"
+                        placeholder="Address Line 2 (Optional)"
+                        value={addressLine2}
+                        onChange={(e) => setAddressLine2(e.target.value)}
+                        className="w-full"
+                      />
+                      <div className="grid grid-cols-2 gap-3">
+                        <Input
+                          type="text"
+                          placeholder="City"
+                          value={city}
+                          onChange={(e) => setCity(e.target.value)}
+                          className="w-full"
+                        />
+                        <Input
+                          type="text"
+                          placeholder="State"
+                          value={state}
+                          onChange={(e) => setState(e.target.value)}
+                          className="w-full"
+                        />
+                      </div>
+                      <Input
+                        type="text"
+                        placeholder="Zip Code"
+                        value={zipCode}
+                        onChange={(e) => setZipCode(e.target.value)}
+                        className="w-full"
+                      />
+                    </div>
                   </div>
                   
                   <div>
