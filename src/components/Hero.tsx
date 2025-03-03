@@ -19,14 +19,14 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo with text on both sides */}
           <div 
-            className={`w-full flex items-center justify-center max-w-[800px] mx-auto mb-4 transition-all duration-700 ${
+            className={`w-full flex flex-col md:flex-row items-center justify-center max-w-[800px] mx-auto mb-4 transition-all duration-700 ${
               isLogoVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
             {/* Left text - "Got Work?" - moved 20% outside */}
             <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 relative right-[20%] ${
-                isLeftTextVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 md:relative md:right-[20%] ${
+                isLeftTextVisible ? "opacity-100 md:translate-x-0" : "opacity-0 md:-translate-x-10"
               }`}
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-600">
@@ -38,13 +38,13 @@ const Hero = () => {
             <img
               src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
               alt="Truckee Meadows Handyman Logo"
-              className="w-[150%] h-auto max-h-[270px] object-contain drop-shadow-2xl"
+              className="w-[150%] max-w-[300px] mx-auto h-auto max-h-[270px] object-contain drop-shadow-2xl my-4 md:my-0"
             />
             
             {/* Right text - "5 Year Warranty" - moved 20% outside */}
             <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 relative left-[20%] ${
-                isRightTextVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 md:relative md:left-[20%] ${
+                isRightTextVisible ? "opacity-100 md:translate-x-0" : "opacity-0 md:translate-x-10"
               }`}
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-primary">
