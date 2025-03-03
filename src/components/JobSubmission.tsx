@@ -1,4 +1,3 @@
-
 import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -59,7 +58,6 @@ const JobSubmission = () => {
       setEmail('');
       setPhone('');
       setAddressLine1('');
-      setAddressLine2('');
       setCity('');
       setState('');
       setZipCode('');
@@ -181,13 +179,6 @@ const JobSubmission = () => {
                         placeholder="Address Line 1"
                         value={addressLine1}
                         onChange={(e) => setAddressLine1(e.target.value)}
-                        className="w-full"
-                      />
-                      <Input
-                        type="text"
-                        placeholder="Address Line 2 (Optional)"
-                        value={addressLine2}
-                        onChange={(e) => setAddressLine2(e.target.value)}
                         className="w-full"
                       />
                       <div className="grid grid-cols-2 gap-3">
