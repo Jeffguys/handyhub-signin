@@ -59,9 +59,9 @@ const Hero = () => {
             <JobSubmission />
           </div>
           
-          {/* Chatbot Button - Moved below Submit Your Project and aligned left */}
+          {/* Chatbot Button - Moved up close to the 20 min Quick Response section */}
           <div 
-            className={`transition-all duration-700 mt-8 mb-4 self-start ${
+            className={`transition-all duration-700 -mt-6 mb-4 self-start ${
               isChatbotVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
