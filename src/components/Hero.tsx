@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useDelayedAnimation } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
@@ -15,21 +16,6 @@ const Hero = () => {
   
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
-      {/* Chatbot Button - Fixed Position in Left Corner */}
-      <div 
-        className={`fixed left-4 top-24 z-50 transition-all duration-700 ${
-          isChatbotVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-        }`}
-      >
-        <Button 
-          size="lg"
-          className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-6 rounded-full shadow-lg"
-        >
-          <MessageCircle size={28} />
-          <span className="font-bold text-lg">Ask our Chatbot</span>
-        </Button>
-      </div>
-
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo with text on both sides */}
@@ -66,6 +52,21 @@ const Hero = () => {
                 5 Year Warranty
               </span>
             </div>
+          </div>
+          
+          {/* Chatbot Button - Moved under TM Logo */}
+          <div 
+            className={`transition-all duration-700 mb-4 ${
+              isChatbotVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <Button 
+              size="lg"
+              className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-6 rounded-full shadow-lg"
+            >
+              <MessageCircle size={28} />
+              <span className="font-bold text-lg">Ask our Chatbot</span>
+            </Button>
           </div>
           
           {/* Job Submission Form - Moved closer to logo */}
