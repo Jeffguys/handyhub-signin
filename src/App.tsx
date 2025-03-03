@@ -32,8 +32,10 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          {/* Debug log */}
-          {console.log("BrowserRouter rendering")}
+          {/* Debug log - moved outside of JSX to fix the error */}
+          <div style={{ display: "none" }}>
+            {console.log("BrowserRouter rendering")}
+          </div>
           
           <Routes>
             <Route path="/" element={<Index />} />
