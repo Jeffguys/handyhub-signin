@@ -37,8 +37,8 @@ const Index = () => {
         <Hero />
         
         {/* About Company Section */}
-        <section id="about" className="py-20 bg-background">
-          <div className="container px-4 md:px-6 mx-auto">
+        <section id="about" className="py-20 bg-background relative page-bands band-1">
+          <div className="container px-4 md:px-6 mx-auto relative z-10">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6 text-center">About Our Company</h2>
               <div className="prose prose-lg mx-auto">
@@ -56,8 +56,8 @@ const Index = () => {
           </div>
         </section>
         
-        <div className="py-20 bg-secondary">
-          <div className="container px-4 md:px-6 mx-auto">
+        <div className="py-20 bg-secondary relative page-bands band-2">
+          <div className="container px-4 md:px-6 mx-auto relative z-10">
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6 animate-blur-in">Why Choose Truckee Meadows Handyman?</h2>
               <p className="text-muted-foreground mb-12 animate-blur-in animation-delay-200">
@@ -105,8 +105,8 @@ const Index = () => {
           </div>
         </div>
         
-        <section id="how-it-works" className="py-24 bg-background fancy-blur-bg">
-          <div className="container px-4 md:px-6 mx-auto">
+        <section id="how-it-works" className="py-24 bg-background fancy-blur-bg relative page-bands band-3">
+          <div className="container px-4 md:px-6 mx-auto relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl font-bold mb-6">How It Works</h2>
               <p className="text-muted-foreground">
@@ -155,8 +155,8 @@ const Index = () => {
         </section>
         
         {/* Services Section */}
-        <section id="services" className="py-20 bg-background">
-          <div className="container px-4 md:px-6 mx-auto">
+        <section id="services" className="py-20 bg-background relative page-bands band-4">
+          <div className="container px-4 md:px-6 mx-auto relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl font-bold mb-6">Our Services</h2>
               <p className="text-muted-foreground">
@@ -282,7 +282,9 @@ const Index = () => {
           </div>
         </section>
         
-        <EmailForm />
+        <div className="relative page-bands band-5">
+          <EmailForm />
+        </div>
       </main>
       <Footer />
     </div>
