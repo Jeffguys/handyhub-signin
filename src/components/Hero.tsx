@@ -56,7 +56,7 @@ const Hero = () => {
           
           {/* Chatbot Button - Moved up 4 lines before the Job Submission Form */}
           <div 
-            className={`transition-all duration-700 mb-4 self-start ml-8 ${
+            className={`transition-all duration-700 mb-4 self-start ml-16 ${
               isChatbotVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
