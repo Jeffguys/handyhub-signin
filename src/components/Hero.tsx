@@ -19,13 +19,13 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo with text on both sides */}
           <div 
-            className={`w-full flex items-center justify-center gap-4 md:gap-8 max-w-[800px] mx-auto mb-4 transition-all duration-700 ${
+            className={`w-full flex items-center justify-center max-w-[800px] mx-auto mb-4 transition-all duration-700 ${
               isLogoVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
-            {/* Left text - "Got Work?" */}
+            {/* Left text - "Got Work?" - moved 20% outside */}
             <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 ${
+              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 relative right-[20%] ${
                 isLeftTextVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
               }`}
             >
@@ -41,9 +41,9 @@ const Hero = () => {
               className="w-full h-auto max-h-[180px] object-contain drop-shadow-2xl"
             />
             
-            {/* Right text - "5 Year Warranty" */}
+            {/* Right text - "5 Year Warranty" - moved 20% outside */}
             <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 ${
+              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 relative left-[20%] ${
                 isRightTextVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               }`}
             >
