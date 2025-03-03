@@ -1,6 +1,4 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -35,19 +33,29 @@ const Footer = () => {
             <h3 className="text-sm font-semibold mb-4">Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Home Repairs
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Installation Services
-                </Link>
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Furniture Assembly
+                </a>
               </li>
               <li>
-                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Maintenance
-                </Link>
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Painting
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Plumbing
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Electrical
+                </a>
               </li>
             </ul>
           </div>
@@ -56,19 +64,29 @@ const Footer = () => {
             <h3 className="text-sm font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Home
-                </Link>
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  About Us
+                </a>
               </li>
               <li>
-                <Link to="/services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Services
-                </Link>
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  How It Works
+                </a>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
