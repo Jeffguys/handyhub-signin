@@ -1,8 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { useDelayedAnimation } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, MessageCircle } from 'lucide-react';
 import JobSubmission from '@/components/JobSubmission';
 
 const Hero = () => {
@@ -12,9 +11,25 @@ const Hero = () => {
   const isLogoVisible = useDelayedAnimation(300);
   const isLeftTextVisible = useDelayedAnimation(400);
   const isRightTextVisible = useDelayedAnimation(500);
+  const isChatbotVisible = useDelayedAnimation(200);
   
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
+      {/* Chatbot Button - Fixed Position in Left Corner */}
+      <div 
+        className={`fixed left-4 top-24 z-50 transition-all duration-700 ${
+          isChatbotVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+        }`}
+      >
+        <Button 
+          size="lg"
+          className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-6 rounded-full shadow-lg"
+        >
+          <MessageCircle size={28} />
+          <span className="font-bold text-lg">Ask our Chatbot</span>
+        </Button>
+      </div>
+
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo with text on both sides */}
