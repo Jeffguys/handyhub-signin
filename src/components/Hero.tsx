@@ -1,9 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { useDelayedAnimation } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, MessageCircle } from 'lucide-react';
 import JobSubmission from '@/components/JobSubmission';
+import MobileTransfer from '@/components/MobileTransfer';
 
 const Hero = () => {
   const isVisible = useDelayedAnimation(100);
@@ -54,7 +54,7 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Chatbot Button - Moved up 4 lines before the Job Submission Form */}
+          {/* Chatbot Button */}
           <div 
             className={`transition-all duration-700 mb-4 self-start ml-24 ${
               isChatbotVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -69,9 +69,16 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Job Submission Form */}
-          <div className="w-full mt-2">
+          {/* Job Submission Form and QR Code */}
+          <div className="w-full mt-2 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
             <JobSubmission />
+            <div 
+              className={`transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+            >
+              <MobileTransfer className="h-full" />
+            </div>
           </div>
           
           <div className="space-y-4 max-w-3xl">
