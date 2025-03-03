@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, Tool, Clock, Award } from 'lucide-react';
+import { Check, Wrench, Clock, Award } from 'lucide-react';
 
 const HomePage = () => {
   return (
@@ -34,7 +34,7 @@ const HomePage = () => {
             <div className="rounded-xl overflow-hidden shadow-lg animate-fade-in">
               <div className="bg-gradient-to-br from-primary/20 to-secondary/40 p-8 h-64 flex items-center justify-center">
                 <div className="bg-white rounded-full p-4 shadow-md">
-                  <Tool className="h-16 w-16 text-primary" />
+                  <Wrench className="h-16 w-16 text-primary" />
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@ const HomePage = () => {
             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
               <div className="flex flex-col items-center text-center space-y-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Tool className="h-8 w-8 text-primary" />
+                  <Wrench className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-bold text-xl">Expert Craftsmen</h3>
                 <p className="text-muted-foreground">
