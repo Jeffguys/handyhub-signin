@@ -123,6 +123,9 @@ const JobSubmission = () => {
           
           <div className="flex-1 w-full lg:w-1/2">
             <div className="glass-card rounded-2xl p-8 shadow-xl">
+              <div className="flex flex-col md:flex-row justify-between items-start mb-6">
+                <h2 className="text-3xl font-bold">Submit Your Project</h2>
+              </div>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-4">
                   <div>
