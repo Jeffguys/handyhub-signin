@@ -10,7 +10,8 @@ import { Textarea } from '@/components/ui/textarea';
 
 const EmailForm = () => {
   const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
+  const [addressLine1, setAddressLine1] = useState('');
+  const [addressLine2, setAddressLine2] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipCode, setZipCode] = useState('');
@@ -26,7 +27,8 @@ const EmailForm = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setEmail('');
-      setAddress('');
+      setAddressLine1('');
+      setAddressLine2('');
       setCity('');
       setState('');
       setZipCode('');
@@ -83,9 +85,16 @@ const EmailForm = () => {
               <h3 className="text-sm font-medium">Address Information</h3>
               <Input
                 type="text"
-                placeholder="Street Address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
+                placeholder="Address Line 1"
+                value={addressLine1}
+                onChange={(e) => setAddressLine1(e.target.value)}
+                className="w-full bg-white border border-input shadow-sm"
+              />
+              <Input
+                type="text"
+                placeholder="Address Line 2 (Optional)"
+                value={addressLine2}
+                onChange={(e) => setAddressLine2(e.target.value)}
                 className="w-full bg-white border border-input shadow-sm"
               />
               <div className="grid grid-cols-2 gap-3">

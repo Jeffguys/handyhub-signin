@@ -11,6 +11,7 @@ export type Database = {
     Tables: {
       job_submissions: {
         Row: {
+          address: string
           "created at": string
           description: string
           email: string
@@ -20,6 +21,7 @@ export type Database = {
           "schedule Time": string
         }
         Insert: {
+          address: string
           "created at"?: string
           description: string
           email: string
@@ -29,6 +31,7 @@ export type Database = {
           "schedule Time": string
         }
         Update: {
+          address?: string
           "created at"?: string
           description?: string
           email?: string
