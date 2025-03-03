@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Building } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,6 +33,13 @@ const Navbar = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
+          <a 
+            href="#about" 
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+          >
+            <Building className="h-4 w-4" />
+            <span>About Company</span>
+          </a>
           <a 
             href="#services" 
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"

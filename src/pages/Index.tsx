@@ -34,6 +34,27 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        
+        {/* About Company Section */}
+        <section id="about" className="py-20 bg-background">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6 text-center">About Our Company</h2>
+              <div className="prose prose-lg mx-auto">
+                <p className="text-muted-foreground mb-4">
+                  Truckee Meadows Handyman has been serving the Reno/Sparks area with quality repair and maintenance services since 2010. Our team of skilled professionals is committed to providing exceptional workmanship and customer service.
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  We specialize in a wide range of home repair services, from minor fixes to major renovations. Our goal is to make your home maintenance experience as smooth and stress-free as possible.
+                </p>
+                <p className="text-muted-foreground">
+                  Whether you need help with plumbing, electrical work, carpentry, or general repairs, you can count on us to deliver reliable and professional service every time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <div className="py-20 bg-secondary">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="text-center max-w-3xl mx-auto">
