@@ -33,6 +33,9 @@ const HomePage = () => {
               <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tighter text-orange-900">
                 Professional Handyman Services in Truckee Meadows
               </h1>
+              <p className="text-xl text-orange-800 font-medium">
+                Services in Truckee Meadows Metro Area Reno/Sparks/Incline
+              </p>
               <p className="text-xl text-orange-800">
                 Quality repairs, installations, and maintenance with a 5-year warranty
               </p>
