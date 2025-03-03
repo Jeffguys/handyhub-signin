@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useDelayedAnimation } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
@@ -69,15 +70,17 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Job Submission Form and QR Code */}
-          <div className="w-full mt-2 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
+          {/* Job Submission Form */}
+          <div className="w-full mt-2">
             <JobSubmission />
+            
+            {/* QR Code - Positioned below job form */}
             <div 
-              className={`transition-all duration-700 ${
+              className={`transition-all duration-700 mt-8 max-w-md mx-auto ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
             >
-              <MobileTransfer className="h-full" />
+              <MobileTransfer />
             </div>
           </div>
           
