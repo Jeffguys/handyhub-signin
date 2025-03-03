@@ -43,11 +43,11 @@ const Hero = () => {
               </span>
             </div>
             
-            {/* Logo in center */}
+            {/* Logo in center - 50% bigger */}
             <img
               src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
               alt="Truckee Meadows Handyman Logo"
-              className="w-[150%] max-w-[300px] mx-auto h-auto max-h-[270px] object-contain drop-shadow-2xl my-4 md:my-0"
+              className="w-[225%] max-w-[450px] mx-auto h-auto max-h-[405px] object-contain drop-shadow-2xl my-4 md:my-0"
             />
             
             {/* Right text - "5 Year Warranty" */}
