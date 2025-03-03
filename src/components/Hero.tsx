@@ -18,33 +18,35 @@ const Hero = () => {
     <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center text-center space-y-6">
-          {/* Logo with text on both sides */}
+          {/* Logo with text on both sides - Modified for left alignment */}
           <div 
-            className={`w-full flex flex-col md:flex-row items-center justify-center max-w-[800px] mx-auto mb-4 transition-all duration-700 ${
+            className={`w-full flex flex-col md:flex-row items-start justify-start max-w-[800px] mx-auto mb-4 transition-all duration-700 ${
               isLogoVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
-            {/* Left text - "Got Work?" - moved 20% outside */}
-            <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 md:relative md:right-[20%] ${
-                isLeftTextVisible ? "opacity-100 md:translate-x-0" : "opacity-0 md:-translate-x-10"
-              }`}
-            >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-600">
-                Got Work?
-              </span>
+            {/* Logo positioned on left */}
+            <div className="flex flex-row items-center">
+              <img
+                src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
+                alt="Truckee Meadows Handyman Logo"
+                className="w-[150%] max-w-[200px] h-auto max-h-[170px] object-contain drop-shadow-2xl my-4 md:my-0"
+              />
+              
+              {/* Left text - "Got Work?" - next to logo */}
+              <div 
+                className={`font-bold text-3xl md:text-4xl lg:text-5xl text-primary transition-all duration-700 hover:scale-105 ml-4 ${
+                  isLeftTextVisible ? "opacity-100 md:translate-x-0" : "opacity-0 md:-translate-x-10"
+                }`}
+              >
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-600">
+                  Got Work?
+                </span>
+              </div>
             </div>
             
-            {/* Logo in center - 50% bigger and wider */}
-            <img
-              src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
-              alt="Truckee Meadows Handyman Logo"
-              className="w-[150%] max-w-[300px] mx-auto h-auto max-h-[270px] object-contain drop-shadow-2xl my-4 md:my-0"
-            />
-            
-            {/* Right text - "5 Year Warranty" - moved 20% outside */}
+            {/* Right text - "5 Year Warranty" - kept on right side */}
             <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 md:relative md:left-[20%] ${
+              className={`font-bold text-3xl md:text-4xl lg:text-5xl text-primary transition-all duration-700 hover:scale-105 md:ml-auto ${
                 isRightTextVisible ? "opacity-100 md:translate-x-0" : "opacity-0 md:translate-x-10"
               }`}
             >
@@ -54,9 +56,9 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Chatbot Button - Moved under TM Logo */}
+          {/* Chatbot Button - Positioned under logo */}
           <div 
-            className={`transition-all duration-700 mb-4 ${
+            className={`transition-all duration-700 mb-4 self-start ${
               isChatbotVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
@@ -69,7 +71,7 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Job Submission Form - Moved closer to logo */}
+          {/* Job Submission Form */}
           <div className="w-full mt-2">
             <JobSubmission />
           </div>
