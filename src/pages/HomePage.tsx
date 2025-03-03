@@ -49,10 +49,12 @@ const HomePage = () => {
               </div>
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg animate-fade-in">
-              <div className="bg-gradient-to-br from-primary/20 to-secondary/40 p-8 h-64 flex items-center justify-center">
-                <div className="bg-white rounded-full p-4 shadow-md">
-                  <Wrench className="h-16 w-16 text-primary" />
-                </div>
+              <div className="bg-gradient-to-br from-primary/20 to-secondary/40 p-8 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/02fd53e8-11af-4e01-9238-4eb50ef3cf3d.png" 
+                  alt="Truckee Meadows Handyman Logo" 
+                  className="w-full max-w-xs"
+                />
               </div>
             </div>
           </div>
