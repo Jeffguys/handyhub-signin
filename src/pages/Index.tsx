@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -7,8 +8,21 @@ import { Button } from "@/components/ui/button";
 import { Hammer, Bath, Sofa, Ruler, DoorOpen, Zap } from "lucide-react";
 
 const Index = () => {
-  // Add smooth scrolling
+  // Add smooth scrolling for hash links
   useEffect(() => {
+    // Check if there's a hash in the URL when the page loads
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.scrollBy(0, -100); // Offset for navbar
+        }
+      }, 100); // Small delay to ensure the DOM is fully loaded
+    }
+    
+    // This handles any anchor links within the page
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
@@ -17,10 +31,8 @@ const Index = () => {
         if (id) {
           const element = document.getElementById(id);
           if (element) {
-            window.scrollTo({
-              top: element.offsetTop - 100,
-              behavior: 'smooth'
-            });
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.scrollBy(0, -100); // Offset for navbar
           }
         }
       }

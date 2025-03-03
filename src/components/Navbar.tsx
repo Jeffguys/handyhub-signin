@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Building, Menu, X, LogOut, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -16,6 +16,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -24,6 +25,21 @@ const Navbar = () => {
   const handleSignOut = async () => {
     await signOut();
     navigate('/');
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    // Only handle scrolling if we're on the index page
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Add a small offset to account for the navbar height
+        window.scrollBy(0, -100);
+      }
+    } else {
+      // If not on the index page, navigate to index with the section hash
+      navigate(`/#${sectionId}`);
+    }
   };
 
   return (
@@ -42,31 +58,31 @@ const Navbar = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a 
-            href="#about" 
+          <button 
+            onClick={() => scrollToSection('about')}
             className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_10px_rgba(255,153,0,0.5)] transition-all flex items-center gap-1"
           >
             <Building className="h-4 w-4" />
             <span>About Company</span>
-          </a>
-          <a 
-            href="#services" 
+          </button>
+          <button 
+            onClick={() => scrollToSection('services')}
             className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_10px_rgba(255,153,0,0.5)] transition-all"
           >
             Services
-          </a>
-          <a 
-            href="#how-it-works" 
+          </button>
+          <button 
+            onClick={() => scrollToSection('how-it-works')}
             className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_10px_rgba(255,153,0,0.5)] transition-all"
           >
             How It Works
-          </a>
-          <a 
-            href="#contact" 
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')}
             className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_10px_rgba(255,153,0,0.5)] transition-all"
           >
             Contact
-          </a>
+          </button>
         </nav>
         
         {/* Auth Buttons */}
