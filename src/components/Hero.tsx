@@ -7,7 +7,7 @@ import MobileTransfer from '@/components/MobileTransfer';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  console.log("Hero component starting to render"); // Debug log
+  console.log("Hero component starting to render"); // Debug log outside JSX
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   
@@ -26,9 +26,11 @@ const Hero = () => {
     console.log("Hero component mounted");
   }, []);
   
+  // Log outside the JSX
+  console.log("Hero section rendering");
+  
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center py-12 overflow-hidden">
-      {console.log("Hero section rendering")}
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center text-center space-y-6">
           

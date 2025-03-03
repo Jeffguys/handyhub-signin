@@ -9,7 +9,8 @@ import { Link } from "react-router-dom";
 import { Hammer, Bath, Sofa, Ruler, DoorOpen, Zap } from "lucide-react";
 
 const Index = () => {
-  console.log("Index page rendering"); // Debug log
+  // Debug log outside JSX
+  console.log("Index page rendering");
 
   useEffect(() => {
     console.log("Index page mounted");
@@ -31,9 +32,12 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Log outside the JSX
+  console.log("About to render Index component content");
+
   return (
     <div className="flex flex-col min-h-screen">
-      {console.log("Index rendering div content")}
+      {/* Log outside JSX block */}
       <div className="bg-primary text-white p-4 text-center">
         <h1 className="text-2xl font-bold">Truckee Meadows Handyman</h1>
         <p>Professional Handyman Services</p>
@@ -41,7 +45,7 @@ const Index = () => {
       
       <Navbar />
       <main className="flex-grow">
-        {console.log("About to render Hero component")}
+        {/* Log outside JSX block */}
         <div style={{padding: "20px", textAlign: "center", marginTop: "40px"}}>
           <h2 className="text-3xl font-bold">Emergency Content</h2>
           <p className="mt-4">If you can see this, the Hero component might be causing issues.</p>
@@ -53,7 +57,7 @@ const Index = () => {
         <Hero />
         
         {/* Continue with the rest of the components */}
-        {console.log("About to render rest of Index page")}
+        {/* Log outside JSX block */}
         
         {/* About Company Section */}
         <section id="about" className="py-20 bg-background">

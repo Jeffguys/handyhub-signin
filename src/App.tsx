@@ -12,6 +12,7 @@ import JobSubmission from "./components/JobSubmission";
 const queryClient = new QueryClient();
 
 const App = () => {
+  // Debug log outside JSX
   console.log("App component rendering");
   
   // Fallback content in case of routing issues
@@ -25,21 +26,15 @@ const App = () => {
     );
   };
   
-  // Force fallback to display immediately for debugging
-  setTimeout(() => {
-    const fallbackContent = document.getElementById('fallback-content');
-    if (fallbackContent) {
-      console.log("Showing fallback content for debugging");
-      fallbackContent.style.display = 'block';
-    }
-  }, 2000);
-  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          {/* Debug log */}
+          {console.log("BrowserRouter rendering")}
+          
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/submit-job" element={<JobSubmission />} />
@@ -47,8 +42,8 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
           
-          {/* Fallback content that will show if routes fail to render */}
-          <div id="fallback-content" style={{ display: "block" }}>
+          {/* Fallback content that will only show if routes fail to render */}
+          <div id="fallback-content" style={{ display: "none" }}>
             <FallbackContent />
           </div>
         </BrowserRouter>
