@@ -87,7 +87,7 @@ body {
 /* Gray band animation */
 @keyframes slide-in {
   0% { transform: translateX(-100%) rotate(-6deg); opacity: 0; }
-  100% { transform: translateX(0) rotate(-6deg); opacity: 0.7; }
+  100% { transform: translateX(0) rotate(-6deg); opacity: 0.5; }
 }
 
 .gray-band {

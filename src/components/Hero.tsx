@@ -19,7 +19,7 @@ const Hero = () => {
     <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
       {/* Gray band - diagonal across the hero section */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -inset-x-1/4 top-1/4 h-[200px] bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 transform -rotate-6 opacity-70 shadow-lg"></div>
+        <div className="absolute -inset-x-1/4 top-1/4 h-[200px] bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 transform -rotate-6 opacity-50 shadow-lg gray-band"></div>
       </div>
       
       <div className="container px-4 md:px-6 mx-auto relative z-10">
