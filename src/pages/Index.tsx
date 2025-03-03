@@ -1,9 +1,10 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import EmailForm from "@/components/EmailForm";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Hammer, Bath, Sofa, Ruler, DoorOpen, Zap } from "lucide-react";
 
 const Index = () => {
   // Add smooth scrolling
@@ -147,6 +148,134 @@ const Index = () => {
                   <p className="text-muted-foreground">
                     Our team will review your job and contact you within 20 minutes to discuss next steps.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Services Section */}
+        <section id="services" className="py-20 bg-background">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl font-bold mb-6">Our Services</h2>
+              <p className="text-muted-foreground">
+                Professional handyman services for all your home improvement needs
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Handyman Services */}
+              <div className="group relative overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all z-10"></div>
+                <img 
+                  src="/lovable-uploads/dfdef18e-66f7-4321-bd84-07a98d35a40e.png" 
+                  alt="Handyman tools" 
+                  className="w-full h-64 object-cover object-left"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-20 p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Hammer className="h-6 w-6 text-white" />
+                    <h3 className="text-xl font-bold text-white uppercase">Handyman</h3>
+                  </div>
+                  <Button variant="outline" className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-black">
+                    Get it done!
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Kitchen and Bath */}
+              <div className="group relative overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all z-10"></div>
+                <img 
+                  src="/lovable-uploads/dfdef18e-66f7-4321-bd84-07a98d35a40e.png" 
+                  alt="Kitchen and bath" 
+                  className="w-full h-64 object-cover object-center"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-20 p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Bath className="h-6 w-6 text-white" />
+                    <h3 className="text-xl font-bold text-white uppercase">Kitchen and Bath</h3>
+                  </div>
+                  <Button variant="outline" className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-black">
+                    Let's Do This!
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Assembly */}
+              <div className="group relative overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all z-10"></div>
+                <img 
+                  src="/lovable-uploads/dfdef18e-66f7-4321-bd84-07a98d35a40e.png" 
+                  alt="Assembly" 
+                  className="w-full h-64 object-cover object-right"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-20 p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Sofa className="h-6 w-6 text-white" />
+                    <h3 className="text-xl font-bold text-white uppercase">Assembly</h3>
+                  </div>
+                  <Button variant="outline" className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-black">
+                    I'm Ready!
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Flooring */}
+              <div className="group relative overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all z-10"></div>
+                <img 
+                  src="/lovable-uploads/dfdef18e-66f7-4321-bd84-07a98d35a40e.png" 
+                  alt="Flooring" 
+                  className="w-full h-64 object-cover object-left-bottom"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-20 p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Ruler className="h-6 w-6 text-white" />
+                    <h3 className="text-xl font-bold text-white uppercase">Flooring</h3>
+                  </div>
+                  <Button variant="outline" className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-black">
+                    Make it So
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Doors */}
+              <div className="group relative overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all z-10"></div>
+                <img 
+                  src="/lovable-uploads/dfdef18e-66f7-4321-bd84-07a98d35a40e.png" 
+                  alt="Doors" 
+                  className="w-full h-64 object-cover object-center-bottom"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-20 p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <DoorOpen className="h-6 w-6 text-white" />
+                    <h3 className="text-xl font-bold text-white uppercase">Doors</h3>
+                  </div>
+                  <Button variant="outline" className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-black">
+                    Request a quote
+                  </Button>
+                </div>
+              </div>
+              
+              {/* Electrical */}
+              <div className="group relative overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-all z-10"></div>
+                <img 
+                  src="/lovable-uploads/dfdef18e-66f7-4321-bd84-07a98d35a40e.png" 
+                  alt="Electrical" 
+                  className="w-full h-64 object-cover object-right-bottom"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-20 p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Zap className="h-6 w-6 text-white" />
+                    <h3 className="text-xl font-bold text-white uppercase">Electrical</h3>
+                  </div>
+                  <Button variant="outline" className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-black">
+                    In a Zap!
+                  </Button>
                 </div>
               </div>
             </div>
