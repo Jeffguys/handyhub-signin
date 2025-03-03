@@ -81,6 +81,7 @@
 
   body {
     font-feature-settings: "rlig" 1, "calt" 1;
+    padding-top: 0; /* Remove any top padding */
   }
 
   #root {
@@ -90,6 +91,18 @@
     max-width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  /* Prevent elements from rolling through the header */
+  main {
+    padding-top: 1rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Orange glow for header items on hover */
+  header nav a:hover {
+    text-shadow: 0 0 10px rgba(255, 153, 0, 0.7);
   }
 
   .fancy-blur-bg {
