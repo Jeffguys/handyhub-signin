@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -37,6 +37,19 @@ const services = [
   }
 ];
 
+const locations = [
+  "Reno",
+  "Sparks",
+  "Hidden Valley",
+  "South Meadows",
+  "Spanish Springs",
+  "Cold Springs",
+  "Lemmon Valley",
+  "Sun Valley",
+  "Verdi",
+  "Mogul"
+];
+
 const ServicesPage = () => {
   return (
     <div className="py-12">
@@ -46,6 +59,29 @@ const ServicesPage = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Professional handyman services for all your home improvement and repair needs.
           </p>
+        </div>
+
+        {/* Service Area Highlight */}
+        <div className="mb-16 bg-orange-50 rounded-xl p-8 border border-orange-200 shadow-orange">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <MapPin className="h-8 w-8 text-orange-600" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-orange-800 mb-3">Services In Truckee Meadows Metro Area Reno/Sparks</h2>
+              <p className="text-orange-700 mb-4">
+                We proudly serve the entire Truckee Meadows region, including Reno, Sparks, and surrounding communities.
+                Our team is locally based and can quickly respond to service calls throughout the area.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
+                {locations.map((location, index) => (
+                  <div key={index} className="bg-white px-3 py-2 rounded-md text-orange-700 text-sm font-medium border border-orange-200 shadow-sm">
+                    {location}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
