@@ -1,6 +1,7 @@
 
 import { Building } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   return (
@@ -43,12 +44,18 @@ const Navbar = () => {
           </a>
         </nav>
         
-        <div className="flex items-center space-x-4">
-          <button 
-            className="relative px-5 py-2.5 rounded-md text-sm font-medium bg-primary text-white hover:bg-primary/90 transition-all"
+        <div className="flex items-center space-x-3">
+          <Button 
+            variant="outline"
+            className="px-4 py-2 text-sm font-medium text-primary border-primary hover:bg-primary/10"
           >
-            Get Started
-          </button>
+            Log In
+          </Button>
+          <Button 
+            className="px-4 py-2 text-sm font-medium bg-primary text-white hover:bg-primary/90"
+          >
+            Sign Up
+          </Button>
         </div>
       </div>
     </header>
