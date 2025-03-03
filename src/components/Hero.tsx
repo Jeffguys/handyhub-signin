@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useDelayedAnimation } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import JobSubmission from '@/components/JobSubmission';
 
 const Hero = () => {
   const isVisible = useDelayedAnimation(100);
@@ -25,6 +26,11 @@ const Hero = () => {
               alt="Truckee Meadows Handyman Logo"
               className="w-full h-auto drop-shadow-2xl"
             />
+          </div>
+          
+          {/* Job Submission Form - Moved here from Index */}
+          <div className="w-full mt-8">
+            <JobSubmission />
           </div>
           
           <div className="space-y-4 max-w-3xl">
@@ -55,7 +61,7 @@ const Hero = () => {
                 isSubtitleVisible ? "opacity-100" : "opacity-0 translate-y-8"
               }`}
             >
-              Truckee Meadows Handyman provides professional repair and maintenance services for your home. Submit your job details below and we'll get back to you quickly.
+              Truckee Meadows Handyman provides professional repair and maintenance services for your home. Submit your job details above and we'll get back to you quickly.
             </p>
           </div>
           
@@ -67,8 +73,14 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="relative group overflow-hidden"
+              onClick={() => {
+                const formElement = document.getElementById('contact');
+                if (formElement) {
+                  formElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
             >
-              <span className="relative z-10">Submit a Job Request</span>
+              <span className="relative z-10">More Information</span>
               <span className="absolute inset-0 bg-primary-foreground/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
               <ChevronRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -81,8 +93,6 @@ const Hero = () => {
               Learn More
             </Button>
           </div>
-          
-          {/* Removed the placeholder image that was here previously */}
         </div>
       </div>
     </section>

@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import EmailForm from "@/components/EmailForm";
-import JobSubmission from "@/components/JobSubmission";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -134,7 +133,6 @@ const Index = () => {
         </section>
         
         <EmailForm />
-        <JobSubmission />
       </main>
       <Footer />
     </div>
