@@ -31,7 +31,7 @@ const Hero = () => {
             >
               <span className="
                 relative inline-block p-1
-                bg-gradient-to-br from-gray-300 to-gray-100
+                bg-gradient-to-br from-gray-300 via-gray-400 to-gray-200
                 bg-clip-text text-transparent
                 shadow-lg
                 transform rotate-1
@@ -39,18 +39,18 @@ const Hero = () => {
               ">
                 <span className="
                   absolute inset-0 
-                  bg-gradient-to-r from-gray-400 via-gray-200 to-gray-300
-                  rounded-lg border border-gray-300
+                  bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300
+                  rounded-lg border-2 border-black
                   transform -skew-x-3 -skew-y-1
                   -z-10
                   shadow-inner
                 "></span>
                 <span className="relative z-[5]">Got Work?</span>
                 {/* Rivets */}
-                <span className="absolute top-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
-                <span className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
-                <span className="absolute bottom-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
-                <span className="absolute bottom-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
+                <span className="absolute top-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-black z-[1]"></span>
+                <span className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-black z-[1]"></span>
+                <span className="absolute bottom-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-black z-[1]"></span>
+                <span className="absolute bottom-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-black z-[1]"></span>
               </span>
             </div>
             
@@ -69,7 +69,7 @@ const Hero = () => {
             >
               <span className="
                 relative inline-block p-1
-                bg-gradient-to-br from-gray-300 to-gray-100
+                bg-gradient-to-br from-gray-300 via-gray-400 to-gray-200
                 bg-clip-text text-transparent
                 shadow-lg
                 transform -rotate-1
@@ -77,18 +77,18 @@ const Hero = () => {
               ">
                 <span className="
                   absolute inset-0 
-                  bg-gradient-to-r from-gray-400 via-gray-200 to-gray-300
-                  rounded-lg border border-gray-300
+                  bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300
+                  rounded-lg border-2 border-black
                   transform skew-x-3 -skew-y-1
                   -z-10
                   shadow-inner
                 "></span>
                 <span className="relative z-[5]">5 Year Warranty</span>
                 {/* Rivets */}
-                <span className="absolute top-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
-                <span className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
-                <span className="absolute bottom-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
-                <span className="absolute bottom-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-gray-300 z-[1]"></span>
+                <span className="absolute top-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-black z-[1]"></span>
+                <span className="absolute top-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-black z-[1]"></span>
+                <span className="absolute bottom-0 left-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-black z-[1]"></span>
+                <span className="absolute bottom-0 right-0 w-3 h-3 bg-gradient-to-br from-gray-600 to-gray-400 rounded-full shadow-inner border border-black z-[1]"></span>
               </span>
             </div>
           </div>
