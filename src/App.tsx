@@ -32,9 +32,9 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          {/* Debug log - moved outside of JSX to fix the error */}
+          {/* Debug log - properly fixed to not return void in JSX */}
           <div style={{ display: "none" }}>
-            {console.log("BrowserRouter rendering")}
+            {(() => { console.log("BrowserRouter rendering"); return null; })()}
           </div>
           
           <Routes>
