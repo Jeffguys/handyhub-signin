@@ -10,6 +10,8 @@ const Hero = () => {
   const isSubtitleVisible = useDelayedAnimation(600);
   const isButtonVisible = useDelayedAnimation(1000);
   const isLogoVisible = useDelayedAnimation(300);
+  const isLeftTextVisible = useDelayedAnimation(400);
+  const isRightTextVisible = useDelayedAnimation(500);
   
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
@@ -22,8 +24,14 @@ const Hero = () => {
             }`}
           >
             {/* Left text - "Got Work?" */}
-            <div className="font-bold text-xl md:text-2xl lg:text-3xl text-black">
-              Got Work?
+            <div 
+              className={`font-bold text-2xl md:text-3xl lg:text-4xl text-primary transition-all duration-700 hover:scale-105 ${
+                isLeftTextVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+              }`}
+            >
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-600">
+                Got Work?
+              </span>
             </div>
             
             {/* Logo in center */}
@@ -34,8 +42,14 @@ const Hero = () => {
             />
             
             {/* Right text - "5 Year Warranty" */}
-            <div className="font-bold text-xl md:text-2xl lg:text-3xl text-black">
-              5 Year Warranty
+            <div 
+              className={`font-bold text-2xl md:text-3xl lg:text-4xl text-primary transition-all duration-700 hover:scale-105 ${
+                isRightTextVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+              }`}
+            >
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-primary">
+                5 Year Warranty
+              </span>
             </div>
           </div>
           
