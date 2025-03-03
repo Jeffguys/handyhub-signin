@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import EmailForm from "@/components/EmailForm";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Hammer, Bath, Sofa, Ruler, DoorOpen, Zap } from "lucide-react";
 
 const Index = () => {
@@ -150,6 +151,14 @@ const Index = () => {
                   </p>
                 </div>
               </div>
+            </div>
+            
+            <div className="mt-12 text-center">
+              <Link to="/submit-job">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Submit a Job Request Now
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

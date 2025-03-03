@@ -5,8 +5,15 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useScrollAnimation } from '@/lib/animations';
 import { cn } from '@/lib/utils';
-import { Camera, Upload, Check, X } from 'lucide-react';
+import { Camera, Upload, Check, X, Calendar } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import { createClient } from '@supabase/supabase-js';
+import { v4 as uuidv4 } from 'uuid';
+
+// Initialize Supabase client
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const JobSubmission = () => {
   const [name, setName] = useState('');
@@ -16,6 +23,8 @@ const JobSubmission = () => {
   const [images, setImages] = useState<File[]>([]);
   const [imagePreviews, setImagePreviews] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<string>('');
+  const [selectedTime, setSelectedTime] = useState<string>('');
   const [ref, isVisible] = useScrollAnimation(0.1);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
@@ -49,13 +58,50 @@ const JobSubmission = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // First, upload all images to Supabase storage
+      const imageUrls: string[] = [];
+      
+      for (const imageFile of images) {
+        const fileExt = imageFile.name.split('.').pop();
+        const fileName = `${uuidv4()}.${fileExt}`;
+        const filePath = `job_images/${fileName}`;
+        
+        const { error: uploadError, data } = await supabase.storage
+          .from('job_images')
+          .upload(filePath, imageFile);
+          
+        if (uploadError) {
+          throw new Error(`Error uploading image: ${uploadError.message}`);
+        }
+        
+        imageUrls.push(filePath);
+      }
+      
+      // Then, save the job submission data to Supabase
+      const { error } = await supabase
+        .from('job_submissions')
+        .insert([
+          { 
+            name, 
+            email, 
+            phone, 
+            description, 
+            image_urls: imageUrls,
+            scheduled_date: selectedDate,
+            scheduled_time: selectedTime,
+            created_at: new Date().toISOString()
+          },
+        ]);
+        
+      if (error) {
+        throw new Error(`Error saving job submission: ${error.message}`);
+      }
+      
       // Reset form
       setName('');
       setEmail('');
@@ -63,13 +109,30 @@ const JobSubmission = () => {
       setDescription('');
       setImages([]);
       setImagePreviews([]);
+      setSelectedDate('');
+      setSelectedTime('');
       
       toast({
         title: "Job submitted successfully!",
         description: "We'll contact you shortly to discuss your project.",
       });
-    }, 2000);
+    } catch (error) {
+      console.error('Error submitting job:', error);
+      toast({
+        title: "Error submitting job",
+        description: error instanceof Error ? error.message : "An unknown error occurred",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  // Available time slots
+  const timeSlots = [
+    '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', 
+    '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM'
+  ];
 
   return (
     <section id="contact" className="py-24 bg-background">
@@ -115,12 +178,12 @@ const JobSubmission = () => {
                 
                 <div className="flex items-start">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <Check className="h-5 w-5 text-primary" />
+                    <Calendar className="h-5 w-5 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold">20 Minutes Quick Response</h3>
+                    <h3 className="text-lg font-semibold">Schedule Appointment</h3>
                     <p className="text-sm text-muted-foreground">
-                      Our team will review your job and contact you within 20 minutes to discuss next steps.
+                      Choose a convenient date and time for us to visit and assess the job in person.
                     </p>
                   </div>
                 </div>
@@ -179,6 +242,40 @@ const JobSubmission = () => {
                       required
                       className="w-full min-h-[120px]"
                     />
+                  </div>
+
+                  {/* Schedule appointment section */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="date" className="block text-sm font-medium mb-2">Preferred Date</label>
+                      <Input
+                        id="date"
+                        type="date"
+                        value={selectedDate}
+                        onChange={(e) => setSelectedDate(e.target.value)}
+                        min={new Date().toISOString().split('T')[0]}
+                        required
+                        className="w-full"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="time" className="block text-sm font-medium mb-2">Preferred Time</label>
+                      <select
+                        id="time"
+                        value={selectedTime}
+                        onChange={(e) => setSelectedTime(e.target.value)}
+                        required
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                      >
+                        <option value="">Select a time</option>
+                        {timeSlots.map((time) => (
+                          <option key={time} value={time}>
+                            {time}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
                   
                   <div>
