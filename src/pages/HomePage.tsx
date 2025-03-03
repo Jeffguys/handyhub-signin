@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Check, Wrench, Clock, Award } from 'lucide-react';
+import EmailForm from '@/components/EmailForm';
 
 const HomePage = () => {
   return (
@@ -110,6 +110,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Signup */}
+      <EmailForm />
 
       {/* Call to Action */}
       <section className="py-16 bg-primary/10">
