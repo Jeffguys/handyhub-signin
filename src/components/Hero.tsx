@@ -54,14 +54,9 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Job Submission Form */}
-          <div className="w-full mt-2">
-            <JobSubmission />
-          </div>
-          
-          {/* Chatbot Button - Moved up close to the 20 min Quick Response section */}
+          {/* Chatbot Button - Moved up 4 lines before the Job Submission Form */}
           <div 
-            className={`transition-all duration-700 -mt-6 mb-4 self-start ${
+            className={`transition-all duration-700 mb-4 self-start ${
               isChatbotVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
@@ -72,6 +67,11 @@ const Hero = () => {
               <MessageCircle size={28} />
               <span className="font-bold text-lg">Ask our Chatbot</span>
             </Button>
+          </div>
+          
+          {/* Job Submission Form */}
+          <div className="w-full mt-2">
+            <JobSubmission />
           </div>
           
           <div className="space-y-4 max-w-3xl">
