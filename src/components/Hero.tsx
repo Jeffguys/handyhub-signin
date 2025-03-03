@@ -8,11 +8,25 @@ const Hero = () => {
   const isVisible = useDelayedAnimation(100);
   const isSubtitleVisible = useDelayedAnimation(600);
   const isButtonVisible = useDelayedAnimation(1000);
+  const isLogoVisible = useDelayedAnimation(300);
   
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center text-center space-y-10">
+          {/* Logo Image - Added Prominently */}
+          <div 
+            className={`w-full max-w-xl mx-auto mb-8 transition-all duration-700 ${
+              isLogoVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+            }`}
+          >
+            <img
+              src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
+              alt="Truckee Meadows Handyman Logo"
+              className="w-full h-auto drop-shadow-2xl"
+            />
+          </div>
+          
           <div className="space-y-4 max-w-3xl">
             <div className="inline-block">
               <span 
@@ -68,20 +82,7 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div 
-            className={`w-full max-w-5xl mx-auto mt-16 transition-all duration-1000 delay-700 ${
-              isButtonVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
-            }`}
-          >
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden border shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
-              <img
-                src="https://images.unsplash.com/photo-1581433939579-4054740ae424?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                alt="Home repair services"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+          {/* Removed the placeholder image that was here previously */}
         </div>
       </div>
     </section>
