@@ -111,9 +111,9 @@ const JobSubmission = () => {
                     <Check className="h-5 w-5 text-primary" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-semibold">Quick Response</h3>
+                    <h3 className="text-lg font-semibold">20 Minutes Quick Response</h3>
                     <p className="text-sm text-muted-foreground">
-                      Our team will review your job and contact you within 24 hours to discuss next steps.
+                      Our team will review your job and contact you within 20 minutes to discuss next steps.
                     </p>
                   </div>
                 </div>

@@ -143,9 +143,9 @@ const Index = () => {
                   3
                 </div>
                 <div className="text-center pt-10 px-4">
-                  <h3 className="text-xl font-medium mb-4">Schedule Service</h3>
+                  <h3 className="text-xl font-medium mb-4">20 Minutes Quick Response</h3>
                   <p className="text-muted-foreground">
-                    Once you approve the quote, we'll schedule a convenient time to come and complete the work.
+                    Our team will review your job and contact you within 20 minutes to discuss next steps.
                   </p>
                 </div>
               </div>
