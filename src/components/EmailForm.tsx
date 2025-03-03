@@ -6,9 +6,14 @@ import { cn } from '@/lib/utils';
 import { useScrollAnimation } from '@/lib/animations';
 import { useToast } from '@/components/ui/use-toast';
 import { Mail } from 'lucide-react';
+import { Textarea } from '@/components/ui/textarea';
 
 const EmailForm = () => {
   const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zipCode, setZipCode] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [ref, isVisible] = useScrollAnimation(0.1);
   const { toast } = useToast();
@@ -21,6 +26,10 @@ const EmailForm = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setEmail('');
+      setAddress('');
+      setCity('');
+      setState('');
+      setZipCode('');
       toast({
         title: "Success!",
         description: "You've signed up successfully. We'll be in touch soon.",
@@ -46,11 +55,11 @@ const EmailForm = () => {
             </div>
             <h2 className="text-3xl font-bold">Sign Up for Updates</h2>
             <p className="text-muted-foreground max-w-md">
-              Stay informed about our services and get exclusive deals by signing up with your email.
+              Stay informed about our services and get exclusive deals by signing up with your email and address.
             </p>
           </div>
           
-          <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto space-y-4">
             <div className="flex flex-col sm:flex-row gap-3">
               <Input
                 type="email"
@@ -68,6 +77,42 @@ const EmailForm = () => {
                 {isSubmitting ? "Signing up..." : "Sign Up"}
               </Button>
             </div>
+            
+            {/* Address Section */}
+            <div className="space-y-3 pt-2">
+              <h3 className="text-sm font-medium">Address Information</h3>
+              <Input
+                type="text"
+                placeholder="Street Address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                className="w-full bg-white border border-input shadow-sm"
+              />
+              <div className="grid grid-cols-2 gap-3">
+                <Input
+                  type="text"
+                  placeholder="City"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  className="w-full bg-white border border-input shadow-sm"
+                />
+                <Input
+                  type="text"
+                  placeholder="State"
+                  value={state}
+                  onChange={(e) => setState(e.target.value)}
+                  className="w-full bg-white border border-input shadow-sm"
+                />
+              </div>
+              <Input
+                type="text"
+                placeholder="Zip Code"
+                value={zipCode}
+                onChange={(e) => setZipCode(e.target.value)}
+                className="w-full bg-white border border-input shadow-sm"
+              />
+            </div>
+            
             <p className="text-xs text-muted-foreground mt-3 text-center">
               We respect your privacy and won't share your information.
             </p>
