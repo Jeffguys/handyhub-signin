@@ -83,3 +83,13 @@ body {
 .animate-fade-in-up {
   animation: fade-in-up 0.6s ease-out forwards;
 }
+
+/* Gray band animation */
+@keyframes slide-in {
+  0% { transform: translateX(-100%) rotate(-6deg); opacity: 0; }
+  100% { transform: translateX(0) rotate(-6deg); opacity: 0.7; }
+}
+
+.gray-band {
+  animation: slide-in 1.2s ease-out forwards;
+}

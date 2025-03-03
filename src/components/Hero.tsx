@@ -17,7 +17,12 @@ const Hero = () => {
   
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
-      <div className="container px-4 md:px-6 mx-auto">
+      {/* Gray band - diagonal across the hero section */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -inset-x-1/4 top-1/4 h-[200px] bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 transform -rotate-6 opacity-70 shadow-lg"></div>
+      </div>
+      
+      <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo with text on both sides */}
           <div 
@@ -71,7 +76,7 @@ const Hero = () => {
           </div>
           
           {/* Job Submission Form */}
-          <div className="w-full mt-2">
+          <div className="w-full mt-2 relative z-10">
             <JobSubmission />
             
             {/* QR Code - Positioned below job form */}
@@ -84,7 +89,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="space-y-4 max-w-3xl">
+          <div className="space-y-4 max-w-3xl relative z-10">
             <div className="inline-block">
               <span 
                 className={`inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium transition-all ${
