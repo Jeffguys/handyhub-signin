@@ -61,7 +61,7 @@ const Hero = () => {
                 isSubtitleVisible ? "opacity-100" : "opacity-0 translate-y-8"
               }`}
             >
-              Truckee Meadows Handyman provides professional repair and maintenance services for your home. Submit your job details above and we'll get back to you quickly.
+              Truckee Meadows Metro Area Reno/Sparks. We provide professional, reliable and affordable handyman services throughout the Truckee Meadows area. Submit your job details above and we'll get back to you quickly.
             </p>
           </div>
           

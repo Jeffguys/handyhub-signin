@@ -39,7 +39,7 @@ const Index = () => {
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6 animate-blur-in">Why Choose Truckee Meadows Handyman?</h2>
               <p className="text-muted-foreground mb-12 animate-blur-in animation-delay-200">
-                We provide professional, reliable and affordable handyman services throughout the Truckee Meadows area.
+                Truckee Meadows Metro Area Reno/Sparks. We provide professional, reliable and affordable handyman services throughout the Truckee Meadows area.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
