@@ -79,6 +79,9 @@ const Hero = () => {
                 <span className="relative z-10"> Right</span>
                 <span className="absolute bottom-2 left-0 w-full h-3 bg-primary/20 z-0"></span>
               </span>
+              <span className="block mt-2 font-bold text-primary">
+                <strong>Licensed and Insured Locally</strong>
+              </span>
             </h1>
             
             <p 
