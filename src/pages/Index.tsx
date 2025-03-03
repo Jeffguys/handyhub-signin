@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -8,6 +9,8 @@ import { Link } from "react-router-dom";
 import { Hammer, Bath, Sofa, Ruler, DoorOpen, Zap } from "lucide-react";
 
 const Index = () => {
+  console.log("Index page rendering"); // Debug log
+
   // Add smooth scrolling
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
@@ -33,6 +36,11 @@ const Index = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <div className="bg-primary text-white p-4 text-center">
+        <h1 className="text-2xl font-bold">Truckee Meadows Handyman</h1>
+        <p>Professional Handyman Services</p>
+      </div>
+      
       <Navbar />
       <main className="flex-grow">
         <Hero />
