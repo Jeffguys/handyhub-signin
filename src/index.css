@@ -35,6 +35,15 @@
     --ring: 30 100% 50%;
 
     --radius: 0.75rem;
+
+    /* Hero 3D / motion design tokens */
+    --primary-glow: 24 100% 62%;
+    --hero-deep: 28 45% 12%;
+    --gradient-hero: radial-gradient(120% 120% at 50% 0%, hsl(30 60% 99%) 0%, hsl(30 45% 95%) 45%, hsl(28 30% 88%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-sheen: linear-gradient(105deg, transparent 30%, hsl(0 0% 100% / 0.55) 48%, transparent 66%);
+    --shadow-3d: 0 40px 80px -30px hsl(var(--hero-deep) / 0.45), 0 8px 24px -12px hsl(var(--primary) / 0.35);
+    --shadow-glow: 0 0 60px hsl(var(--primary) / 0.35);
   }
 
   .dark {
@@ -65,6 +74,10 @@
     --border: 30 20% 20%;
     --input: 30 20% 20%;
     --ring: 30 100% 50%;
+
+    --primary-glow: 24 100% 62%;
+    --hero-deep: 28 40% 4%;
+    --gradient-hero: radial-gradient(120% 120% at 50% 0%, hsl(30 15% 14%) 0%, hsl(30 12% 9%) 50%, hsl(30 10% 6%) 100%);
   }
 
   * {
