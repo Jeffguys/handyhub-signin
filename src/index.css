@@ -59,28 +59,31 @@
     --popover: 30 10% 8%;
     --popover-foreground: 30 10% 98%;
 
-    --primary: 30 100% 50%;
-    --primary-foreground: 30 10% 8%;
+    --primary: 16 60% 52%;
+    --primary-foreground: 40 40% 97%;
 
-    --secondary: 30 20% 16%;
-    --secondary-foreground: 30 10% 98%;
+    --secondary: 150 14% 16%;
+    --secondary-foreground: 40 30% 96%;
 
-    --muted: 30 20% 16%;
-    --muted-foreground: 30 10% 65%;
+    --muted: 150 12% 16%;
+    --muted-foreground: 40 12% 68%;
 
-    --accent: 30 20% 16%;
-    --accent-foreground: 30 10% 98%;
+    --accent: 132 18% 34%;
+    --accent-foreground: 40 30% 96%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 30 20% 20%;
-    --input: 30 20% 20%;
-    --ring: 30 100% 50%;
+    --border: 150 12% 22%;
+    --input: 150 12% 22%;
+    --ring: 16 60% 52%;
 
-    --primary-glow: 24 100% 62%;
-    --hero-deep: 28 40% 4%;
-    --gradient-hero: radial-gradient(120% 120% at 50% 0%, hsl(30 15% 14%) 0%, hsl(30 12% 9%) 50%, hsl(30 10% 6%) 100%);
+    --primary-glow: 26 58% 60%;
+    --sage: 132 16% 52%;
+    --forest: 152 22% 30%;
+    --clay: 20 34% 56%;
+    --hero-deep: 150 30% 4%;
+    --gradient-hero: radial-gradient(120% 120% at 50% 0%, hsl(150 12% 14%) 0%, hsl(150 12% 9%) 50%, hsl(150 14% 6%) 100%);
   }
 
   * {
