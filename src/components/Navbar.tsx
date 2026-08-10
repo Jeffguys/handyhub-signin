@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger 
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/hooks/useAuth';
+import tmhLogo from '@/assets/tmh-logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,15 +45,20 @@ const Navbar = () => {
 
   return (
     <header 
-      className="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm py-3 z-50"
+      className="sticky top-0 bg-background/85 backdrop-blur-md border-b border-border shadow-sm py-3 z-50"
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-              <span className="text-white font-bold text-xl">TM</span>
-            </div>
-            <span className="font-medium text-lg">Truckee Meadows Handyman</span>
+            <img
+              src={tmhLogo}
+              alt="Truckee Meadows Handyman logo"
+              width={1024}
+              height={1024}
+              loading="lazy"
+              className="h-11 w-11 object-contain transition-transform duration-300 hover:scale-110 hover:-rotate-3"
+            />
+            <span className="font-semibold text-lg tracking-tight">Truckee Meadows Handyman</span>
           </Link>
         </div>
         
@@ -115,7 +121,7 @@ const Navbar = () => {
                 Log In
               </Button>
               <Button 
-                className="px-4 py-2 text-sm font-medium bg-primary text-white hover:bg-primary/90"
+                className="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90"
                 onClick={() => navigate('/auth?tab=signup')}
               >
                 Sign Up
