@@ -66,26 +66,26 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <button 
             onClick={() => scrollToSection('about')}
-            className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_10px_rgba(255,153,0,0.5)] transition-all flex items-center gap-1"
+            className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_12px_hsl(var(--primary)/0.45)] transition-all flex items-center gap-1"
           >
             <Building className="h-4 w-4" />
             <span>About Company</span>
           </button>
           <button 
             onClick={() => scrollToSection('services')}
-            className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_10px_rgba(255,153,0,0.5)] transition-all"
+            className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_12px_hsl(var(--primary)/0.45)] transition-all"
           >
             Services
           </button>
           <button 
             onClick={() => scrollToSection('how-it-works')}
-            className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_10px_rgba(255,153,0,0.5)] transition-all"
+            className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_12px_hsl(var(--primary)/0.45)] transition-all"
           >
             How It Works
           </button>
           <button 
             onClick={() => scrollToSection('contact')}
-            className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_10px_rgba(255,153,0,0.5)] transition-all"
+            className="text-sm font-medium text-muted-foreground hover:text-primary hover:shadow-[0_0_12px_hsl(var(--primary)/0.45)] transition-all"
           >
             Contact
           </button>

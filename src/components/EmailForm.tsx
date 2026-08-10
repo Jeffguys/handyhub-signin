@@ -69,7 +69,7 @@ const EmailForm = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-grow h-12 px-4 bg-white border border-input shadow-sm"
+                className="flex-grow h-12 px-4 bg-card border border-input shadow-sm"
               />
               <Button 
                 type="submit" 
@@ -88,14 +88,14 @@ const EmailForm = () => {
                 placeholder="Address Line 1"
                 value={addressLine1}
                 onChange={(e) => setAddressLine1(e.target.value)}
-                className="w-full bg-white border border-input shadow-sm"
+                className="w-full bg-card border border-input shadow-sm"
               />
               <Input
                 type="text"
                 placeholder="Address Line 2 (Optional)"
                 value={addressLine2}
                 onChange={(e) => setAddressLine2(e.target.value)}
-                className="w-full bg-white border border-input shadow-sm"
+                className="w-full bg-card border border-input shadow-sm"
               />
               <div className="grid grid-cols-2 gap-3">
                 <Input
@@ -103,14 +103,14 @@ const EmailForm = () => {
                   placeholder="City"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full bg-white border border-input shadow-sm"
+                  className="w-full bg-card border border-input shadow-sm"
                 />
                 <Input
                   type="text"
                   placeholder="State"
                   value={state}
                   onChange={(e) => setState(e.target.value)}
-                  className="w-full bg-white border border-input shadow-sm"
+                  className="w-full bg-card border border-input shadow-sm"
                 />
               </div>
               <Input
@@ -118,7 +118,7 @@ const EmailForm = () => {
                 placeholder="Zip Code"
                 value={zipCode}
                 onChange={(e) => setZipCode(e.target.value)}
-                className="w-full bg-white border border-input shadow-sm"
+                className="w-full bg-card border border-input shadow-sm"
               />
             </div>
             

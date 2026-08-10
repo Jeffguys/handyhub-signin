@@ -221,7 +221,7 @@ const JobSubmission = () => {
                   
                   <div>
                     <label className="block text-sm font-medium mb-2">Upload Photo</label>
-                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-gray-300 rounded-lg">
+                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-border rounded-lg">
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
                           <div className="relative mx-auto">
@@ -233,15 +233,15 @@ const JobSubmission = () => {
                             <button 
                               type="button"
                               onClick={handleClearImage}
-                              className="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-md"
+                              className="absolute -top-2 -right-2 bg-card rounded-full p-1 shadow-md"
                             >
                               <X className="h-4 w-4" />
                             </button>
                           </div>
                         ) : (
                           <>
-                            <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                            <div className="flex text-sm text-gray-600">
+                            <Upload className="mx-auto h-12 w-12 text-muted-foreground" />
+                            <div className="flex text-sm text-muted-foreground">
                               <label
                                 htmlFor="file-upload"
                                 className="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary/90 focus-within:outline-none focus-within:ring-2 focus-within:ring-primary"
@@ -259,7 +259,7 @@ const JobSubmission = () => {
                               </label>
                               <p className="pl-1">or drag and drop</p>
                             </div>
-                            <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                            <p className="text-xs text-muted-foreground">PNG, JPG, GIF up to 10MB</p>
                           </>
                         )}
                       </div>
