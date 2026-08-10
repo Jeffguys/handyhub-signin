@@ -24,7 +24,7 @@ const MobileTransfer = ({ className }: MobileTransferProps) => {
         <h3 className="font-medium text-lg">Continue on Mobile</h3>
       </div>
       
-      <div className="bg-white p-3 rounded-lg mb-4">
+      <div className="bg-card p-3 rounded-lg mb-4">
         <QRCodeSVG 
           value={currentUrl} 
           size={180}

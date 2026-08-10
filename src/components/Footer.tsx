@@ -1,5 +1,6 @@
 
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import tmhLogo from '@/assets/tmh-logo.png';
 
 const Footer = () => {
   return (
@@ -8,9 +9,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-sm">TM</span>
-              </div>
+              <img
+                src={tmhLogo}
+                alt="Truckee Meadows Handyman logo"
+                width={1024}
+                height={1024}
+                loading="lazy"
+                className="h-9 w-9 object-contain"
+              />
               <span className="font-medium">Truckee Meadows Handyman</span>
             </div>
             <p className="text-sm text-muted-foreground">

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import JobSubmission from '@/components/JobSubmission';
 import MobileTransfer from '@/components/MobileTransfer';
 import HeroStage from '@/components/HeroStage';
+import tmhLogo from '@/assets/tmh-logo.png';
 
 const rise = {
   hidden: { opacity: 0, y: 28, filter: 'blur(8px)' },
@@ -21,8 +22,9 @@ const Hero = () => {
     <section className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-24 overflow-hidden hero-surface">
       {/* Ambient depth layers */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 -right-24 h-[520px] w-[520px] rounded-full bg-primary/25 blur-[120px] animate-orb" />
-        <div className="absolute -bottom-52 -left-24 h-[560px] w-[560px] rounded-full bg-primary/15 blur-[130px] animate-orb [animation-delay:-8s]" />
+        <div className="absolute -top-40 -right-24 h-[520px] w-[520px] rounded-full bg-primary/20 blur-[120px] animate-orb" />
+        <div className="absolute -bottom-52 -left-24 h-[560px] w-[560px] rounded-full bg-sage/30 blur-[130px] animate-orb [animation-delay:-8s]" />
+        <div className="absolute top-1/3 left-1/4 h-[380px] w-[380px] rounded-full bg-forest/10 blur-[120px] animate-orb [animation-delay:-14s]" />
         <div className="absolute inset-x-0 bottom-0 h-[45vh] hero-grid opacity-70" />
       </div>
 
@@ -50,15 +52,14 @@ const Hero = () => {
               style={{ transform: 'translateZ(140px)' }}
             >
               <div className="relative animate-float">
-                <div className="absolute inset-0 -z-10 rounded-[2rem] bg-primary/25 blur-3xl scale-90" />
-                <div className="sheen relative overflow-hidden rounded-[2rem] border border-border bg-card/60 backdrop-blur-xl shadow-3d p-6 md:p-8">
-                  <img
-                    src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
-                    alt="Truckee Meadows Handyman logo"
-                    className="w-full max-w-[360px] h-auto object-contain mx-auto drop-shadow-xl"
-                    loading="eager"
-                  />
-                </div>
+                <div className="absolute inset-0 -z-10 rounded-full bg-sage/40 blur-3xl scale-90" />
+                <img
+                  src={tmhLogo}
+                  alt="Truckee Meadows Handyman TMH crest logo"
+                  width={1024}
+                  height={1024}
+                  className="w-[300px] md:w-[400px] h-auto object-contain mx-auto drop-shadow-2xl"
+                />
               </div>
 
               {/* Orbiting 3D chips */}
