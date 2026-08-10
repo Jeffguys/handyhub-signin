@@ -1,160 +1,150 @@
 
-import { useState, useEffect } from 'react';
-import { useDelayedAnimation } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, MessageCircle } from 'lucide-react';
+import { ChevronRight, MessageCircle, ShieldCheck, Hammer } from 'lucide-react';
+import { motion } from 'framer-motion';
 import JobSubmission from '@/components/JobSubmission';
 import MobileTransfer from '@/components/MobileTransfer';
+import HeroStage from '@/components/HeroStage';
+
+const rise = {
+  hidden: { opacity: 0, y: 28, filter: 'blur(8px)' },
+  show: { opacity: 1, y: 0, filter: 'blur(0px)' },
+};
+
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
 
 const Hero = () => {
-  const isVisible = useDelayedAnimation(100);
-  const isSubtitleVisible = useDelayedAnimation(600);
-  const isButtonVisible = useDelayedAnimation(1000);
-  const isLogoVisible = useDelayedAnimation(300);
-  const isLeftTextVisible = useDelayedAnimation(400);
-  const isRightTextVisible = useDelayedAnimation(500);
-  const isChatbotVisible = useDelayedAnimation(200);
-  
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center pt-20 pb-20 fancy-blur-bg overflow-hidden">
-      {/* Gray bands - diagonal across the hero section */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -inset-x-1/4 top-1/4 h-[200px] bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 transform -rotate-6 opacity-60 shadow-lg gray-band gray-band-1"></div>
-        <div className="absolute -inset-x-1/4 top-1/2 h-[150px] bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 transform -rotate-6 opacity-40 shadow-lg gray-band gray-band-2"></div>
-        <div className="absolute -inset-x-1/4 top-3/4 h-[180px] bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 transform -rotate-6 opacity-50 shadow-lg gray-band gray-band-3"></div>
+    <section className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-24 overflow-hidden hero-surface">
+      {/* Ambient depth layers */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-40 -right-24 h-[520px] w-[520px] rounded-full bg-primary/25 blur-[120px] animate-orb" />
+        <div className="absolute -bottom-52 -left-24 h-[560px] w-[560px] rounded-full bg-primary/15 blur-[130px] animate-orb [animation-delay:-8s]" />
+        <div className="absolute inset-x-0 bottom-0 h-[45vh] hero-grid opacity-70" />
       </div>
-      
+
       <div className="container px-4 md:px-6 mx-auto relative z-10">
-        <div className="flex flex-col items-center text-center space-y-6">
-          {/* Logo with text on both sides */}
-          <div 
-            className={`w-full flex flex-col md:flex-row items-center justify-center max-w-[800px] mx-auto mb-4 transition-all duration-700 ${
-              isLogoVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-            }`}
+        <HeroStage>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="flex flex-col items-center text-center space-y-8 preserve-3d"
           >
-            {/* Left text - "Got Work?" */}
-            <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 md:relative md:right-[20%] ${
-                isLeftTextVisible ? "opacity-100 md:translate-x-0" : "opacity-0 md:-translate-x-10"
-              }`}
-            >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-orange-600">
-                Got Work?
-              </span>
-            </div>
-            
-            {/* Logo in center - 50% bigger */}
-            <img
-              src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
-              alt="Truckee Meadows Handyman Logo"
-              className="w-[225%] max-w-[450px] mx-auto h-auto max-h-[405px] object-contain drop-shadow-2xl my-4 md:my-0"
-            />
-            
-            {/* Right text - "5 Year Warranty" */}
-            <div 
-              className={`font-bold text-4xl md:text-5xl lg:text-6xl text-primary transition-all duration-700 hover:scale-105 md:relative md:left-[20%] ${
-                isRightTextVisible ? "opacity-100 md:translate-x-0" : "opacity-0 md:translate-x-10"
-              }`}
-            >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-primary">
-                5 Year Warranty
-              </span>
-            </div>
-          </div>
-          
-          {/* Chatbot Button */}
-          <div 
-            className={`transition-all duration-700 mb-4 self-start ml-24 ${
-              isChatbotVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-          >
-            <Button 
-              size="lg"
-              className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-6 rounded-full shadow-lg"
-            >
-              <MessageCircle size={28} />
-              <span className="font-bold text-lg">Ask our Chatbot</span>
-            </Button>
-          </div>
-          
-          {/* Job Submission Form */}
-          <div className="w-full mt-2 relative z-10">
-            <JobSubmission />
-            
-            {/* QR Code - Positioned below job form */}
-            <div 
-              className={`transition-all duration-700 mt-8 max-w-md mx-auto ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-            >
-              <MobileTransfer />
-            </div>
-          </div>
-          
-          <div className="space-y-4 max-w-3xl relative z-10">
-            <div className="inline-block">
-              <span 
-                className={`inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium transition-all ${
-                  isVisible ? "opacity-100" : "opacity-0 translate-y-4"
-                }`}
-              >
+            {/* Floating badge */}
+            <motion.div variants={rise} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} style={{ transform: 'translateZ(90px)' }}>
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-card/70 backdrop-blur text-xs font-medium tracking-wide uppercase text-muted-foreground shadow-sm">
+                <Hammer className="h-3.5 w-3.5 text-primary" />
                 Professional Handyman Services
               </span>
-            </div>
-            
-            <h1 
-              className={`text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight transition-all duration-700 ${
-                isVisible ? "opacity-100" : "opacity-0 translate-y-8"
-              }`}
+            </motion.div>
+
+            {/* 3D logo plate */}
+            <motion.div
+              variants={rise}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="relative preserve-3d"
+              style={{ transform: 'translateZ(140px)' }}
             >
-              Get Your Home Repairs Done 
-              <span className="relative">
-                <span className="relative z-10"> Right</span>
-                <span className="absolute bottom-2 left-0 w-full h-3 bg-primary/20 z-0"></span>
-              </span>
-              <span className="block mt-2 font-bold text-primary">
-                <strong>Licensed and Insured Locally</strong>
-              </span>
-            </h1>
-            
-            <p 
-              className={`mt-4 text-xl text-muted-foreground max-w-2xl mx-auto transition-all duration-700 delay-300 ${
-                isSubtitleVisible ? "opacity-100" : "opacity-0 translate-y-8"
-              }`}
+              <div className="relative animate-float">
+                <div className="absolute inset-0 -z-10 rounded-[2rem] bg-primary/25 blur-3xl scale-90" />
+                <div className="sheen relative overflow-hidden rounded-[2rem] border border-border bg-card/60 backdrop-blur-xl shadow-3d p-6 md:p-8">
+                  <img
+                    src="/lovable-uploads/694b803a-91a0-433b-a00b-ea7d9d9144fc.png"
+                    alt="Truckee Meadows Handyman logo"
+                    className="w-full max-w-[360px] h-auto object-contain mx-auto drop-shadow-xl"
+                    loading="eager"
+                  />
+                </div>
+              </div>
+
+              {/* Orbiting 3D chips */}
+              <motion.div
+                aria-hidden
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                className="hidden md:flex absolute -left-28 top-8 items-center gap-2 rounded-2xl border border-border bg-card/80 backdrop-blur px-4 py-3 shadow-3d"
+                style={{ transform: 'translateZ(200px) rotateY(14deg)' }}
+              >
+                <span className="text-2xl font-bold text-gradient-primary">Got Work?</span>
+              </motion.div>
+
+              <motion.div
+                aria-hidden
+                animate={{ y: [0, 14, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                className="hidden md:flex absolute -right-32 bottom-10 items-center gap-2 rounded-2xl border border-border bg-card/80 backdrop-blur px-4 py-3 shadow-3d"
+                style={{ transform: 'translateZ(200px) rotateY(-14deg)' }}
+              >
+                <ShieldCheck className="h-6 w-6 text-primary" />
+                <span className="text-xl font-bold text-gradient-primary">5 Year Warranty</span>
+              </motion.div>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.div
+              variants={rise}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="space-y-5 max-w-3xl"
+              style={{ transform: 'translateZ(70px)' }}
             >
-              Truckee Meadows Metro Area Reno/Sparks. We provide professional, reliable and affordable handyman services throughout the Truckee Meadows area. Submit your job details above and we'll get back to you quickly.
-            </p>
-          </div>
-          
-          <div 
-            className={`flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto transition-all duration-700 delay-500 ${
-              isButtonVisible ? "opacity-100" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <Button 
-              size="lg" 
-              className="relative group overflow-hidden"
-              onClick={() => {
-                const formElement = document.getElementById('contact');
-                if (formElement) {
-                  formElement.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+                Get Your Home Repairs Done
+                <span className="relative ml-2 inline-block">
+                  <span className="relative z-10 text-gradient-primary">Right</span>
+                  <span className="absolute bottom-1 left-0 h-3 w-full rounded-full bg-primary/20" />
+                </span>
+                <span className="block mt-3 text-2xl md:text-3xl font-semibold text-foreground/80">
+                  Licensed &amp; insured, locally in Reno / Sparks
+                </span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+                Professional, reliable and affordable handyman services across the Truckee Meadows.
+                Submit your job details and we&apos;ll get back to you fast.
+              </p>
+            </motion.div>
+
+            {/* Actions */}
+            <motion.div
+              variants={rise}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col sm:flex-row gap-4 items-center"
+              style={{ transform: 'translateZ(110px)' }}
             >
-              <span className="relative z-10">More Information</span>
-              <span className="absolute inset-0 bg-primary-foreground/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-              <ChevronRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2"
+              <Button
+                size="lg"
+                className="relative group overflow-hidden shadow-glow"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <span className="relative z-10">More Information</span>
+                <span className="absolute inset-0 bg-primary-foreground/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <ChevronRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+              </Button>
+
+              <Button size="lg" variant="outline" className="border-2 rounded-full gap-2 backdrop-blur bg-card/50">
+                <MessageCircle className="h-5 w-5 text-primary" />
+                Ask our Chatbot
+              </Button>
+            </motion.div>
+
+            {/* Form + QR on a lifted plane */}
+            <motion.div
+              variants={rise}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full pt-6"
+              style={{ transform: 'translateZ(40px)' }}
             >
-              Learn More
-            </Button>
-          </div>
-        </div>
+              <JobSubmission />
+              <div className="mt-10 max-w-md mx-auto">
+                <MobileTransfer />
+              </div>
+            </motion.div>
+          </motion.div>
+        </HeroStage>
       </div>
     </section>
   );
