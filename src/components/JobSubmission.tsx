@@ -172,9 +172,11 @@ const JobSubmission = () => {
                   
                   {/* Address Section */}
                   <div>
-                    <label className="block text-sm font-medium mb-2">Address</label>
+                    <span className="block text-sm font-medium mb-2">Address</span>
                     <div className="space-y-3">
+                      <label htmlFor="job-address-line1" className="sr-only">Address line 1</label>
                       <Input
+                        id="job-address-line1"
                         type="text"
                         placeholder="Address Line 1"
                         value={addressLine1}
@@ -182,22 +184,32 @@ const JobSubmission = () => {
                         className="w-full"
                       />
                       <div className="grid grid-cols-2 gap-3">
-                        <Input
-                          type="text"
-                          placeholder="City"
-                          value={city}
-                          onChange={(e) => setCity(e.target.value)}
-                          className="w-full"
-                        />
-                        <Input
-                          type="text"
-                          placeholder="State"
-                          value={state}
-                          onChange={(e) => setState(e.target.value)}
-                          className="w-full"
-                        />
+                        <div>
+                          <label htmlFor="job-city" className="sr-only">City</label>
+                          <Input
+                            id="job-city"
+                            type="text"
+                            placeholder="City"
+                            value={city}
+                            onChange={(e) => setCity(e.target.value)}
+                            className="w-full"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="job-state" className="sr-only">State</label>
+                          <Input
+                            id="job-state"
+                            type="text"
+                            placeholder="State"
+                            value={state}
+                            onChange={(e) => setState(e.target.value)}
+                            className="w-full"
+                          />
+                        </div>
                       </div>
+                      <label htmlFor="job-zip" className="sr-only">Zip code</label>
                       <Input
+                        id="job-zip"
                         type="text"
                         placeholder="Zip Code"
                         value={zipCode}
@@ -220,7 +232,7 @@ const JobSubmission = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium mb-2">Upload Photo</label>
+                    <span className="block text-sm font-medium mb-2">Upload Photo</span>
                     <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-border rounded-lg">
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
@@ -232,10 +244,11 @@ const JobSubmission = () => {
                             />
                             <button 
                               type="button"
+                              aria-label="Clear image"
                               onClick={handleClearImage}
                               className="absolute -top-2 -right-2 bg-card rounded-full p-1 shadow-md"
                             >
-                              <X className="h-4 w-4" />
+                              <X className="h-4 w-4" aria-hidden="true" />
                             </button>
                           </div>
                         ) : (

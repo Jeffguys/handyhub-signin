@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -52,6 +53,20 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-secondary/50 px-4">
+      <Helmet>
+        <title>Log In or Sign Up — Truckee Meadows Handyman</title>
+        <meta
+          name="description"
+          content="Log in or create your Truckee Meadows Handyman account to submit jobs, upload photos and track quotes for repairs in Reno and Sparks."
+        />
+        <link rel="canonical" href="https://handyhub-signin.lovable.app/auth" />
+        <meta property="og:title" content="Log In or Sign Up — Truckee Meadows Handyman" />
+        <meta
+          property="og:description"
+          content="Access your Truckee Meadows Handyman account to submit jobs and track your repair quotes."
+        />
+        <meta property="og:url" content="https://handyhub-signin.lovable.app/auth" />
+      </Helmet>
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold">Welcome to Truckee Meadows Handyman</h1>
