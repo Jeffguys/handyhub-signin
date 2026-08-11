@@ -63,7 +63,9 @@ const EmailForm = () => {
           
           <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto space-y-4">
             <div className="flex flex-col sm:flex-row gap-3">
+              <label htmlFor="newsletter-email" className="sr-only">Email address</label>
               <Input
+                id="newsletter-email"
                 type="email"
                 placeholder="Enter your email"
                 value={email}
@@ -83,14 +85,18 @@ const EmailForm = () => {
             {/* Address Section */}
             <div className="space-y-3 pt-2">
               <h3 className="text-sm font-medium">Address Information</h3>
+              <label htmlFor="newsletter-address1" className="sr-only">Address line 1</label>
               <Input
+                id="newsletter-address1"
                 type="text"
                 placeholder="Address Line 1"
                 value={addressLine1}
                 onChange={(e) => setAddressLine1(e.target.value)}
                 className="w-full bg-card border border-input shadow-sm"
               />
+              <label htmlFor="newsletter-address2" className="sr-only">Address line 2 (optional)</label>
               <Input
+                id="newsletter-address2"
                 type="text"
                 placeholder="Address Line 2 (Optional)"
                 value={addressLine2}
@@ -98,22 +104,32 @@ const EmailForm = () => {
                 className="w-full bg-card border border-input shadow-sm"
               />
               <div className="grid grid-cols-2 gap-3">
-                <Input
-                  type="text"
-                  placeholder="City"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  className="w-full bg-card border border-input shadow-sm"
-                />
-                <Input
-                  type="text"
-                  placeholder="State"
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}
-                  className="w-full bg-card border border-input shadow-sm"
-                />
+                <div>
+                  <label htmlFor="newsletter-city" className="sr-only">City</label>
+                  <Input
+                    id="newsletter-city"
+                    type="text"
+                    placeholder="City"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    className="w-full bg-card border border-input shadow-sm"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="newsletter-state" className="sr-only">State</label>
+                  <Input
+                    id="newsletter-state"
+                    type="text"
+                    placeholder="State"
+                    value={state}
+                    onChange={(e) => setState(e.target.value)}
+                    className="w-full bg-card border border-input shadow-sm"
+                  />
+                </div>
               </div>
+              <label htmlFor="newsletter-zip" className="sr-only">Zip code</label>
               <Input
+                id="newsletter-zip"
                 type="text"
                 placeholder="Zip Code"
                 value={zipCode}

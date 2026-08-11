@@ -23,14 +23,14 @@ const Footer = () => {
               Professional handyman services for all your home repair and maintenance needs.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="#" aria-label="Truckee Meadows Handyman on Facebook" className="text-muted-foreground hover:text-primary transition-colors">
+                <Facebook className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram className="h-5 w-5" />
+              <a href="#" aria-label="Truckee Meadows Handyman on Instagram" className="text-muted-foreground hover:text-primary transition-colors">
+                <Instagram className="h-5 w-5" aria-hidden="true" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
+              <a href="#" aria-label="Truckee Meadows Handyman on Twitter" className="text-muted-foreground hover:text-primary transition-colors">
+                <Twitter className="h-5 w-5" aria-hidden="true" />
               </a>
             </div>
           </div>
