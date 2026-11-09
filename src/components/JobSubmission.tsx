@@ -130,7 +130,7 @@ const JobSubmission = () => {
           </div>
           
           <div className="flex-1 w-full lg:w-1/2">
-            <div className="deep-glass rounded-2xl p-8">
+            <div className="deep-glass rounded-2xl p-8 text-left">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-4">
                   <div>
