@@ -73,7 +73,7 @@ const JobSubmission = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24 deep-panel">
       <div className="container px-4 md:px-6 mx-auto">
         <div 
           ref={ref}
@@ -84,15 +84,15 @@ const JobSubmission = () => {
         >
           <div className="flex-1 w-full lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-bold mb-6">Submit Your Project</h2>
+              <h2 className="text-3xl font-bold mb-6 text-balance">Submit Your Project</h2>
               <p className="text-muted-foreground mb-8">
                 Tell us about your repair needs and upload a photo of the job. Our team will review your request and get back to you with a quote.
               </p>
               
               <div className="space-y-6 md:space-y-10">
                 <div className="flex items-start">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <Camera className="h-5 w-5 text-primary" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
+                    <Camera className="h-5 w-5 text-gold" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Upload Job Photos</h3>
@@ -103,8 +103,8 @@ const JobSubmission = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <Check className="h-5 w-5 text-primary" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
+                    <Check className="h-5 w-5 text-gold" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Detailed Assessment</h3>
@@ -115,8 +115,8 @@ const JobSubmission = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <Check className="h-5 w-5 text-primary" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
+                    <Check className="h-5 w-5 text-gold" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">20 Minutes Quick Response</h3>
@@ -130,7 +130,7 @@ const JobSubmission = () => {
           </div>
           
           <div className="flex-1 w-full lg:w-1/2">
-            <div className="glass-card rounded-2xl p-8 shadow-xl">
+            <div className="deep-glass rounded-2xl p-8 text-left">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-4">
                   <div>
@@ -233,7 +233,7 @@ const JobSubmission = () => {
                   
                   <div>
                     <span className="block text-sm font-medium mb-2">Upload Photo</span>
-                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-border rounded-lg">
+                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-gold/50 rounded-lg bg-foreground/[0.04]">
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
                           <div className="relative mx-auto">
@@ -246,7 +246,7 @@ const JobSubmission = () => {
                               type="button"
                               aria-label="Clear image"
                               onClick={handleClearImage}
-                              className="absolute -top-2 -right-2 bg-card rounded-full p-1 shadow-md"
+                              className="absolute -top-2 -right-2 bg-card rounded-full p-1 shadow-md ring-1 ring-border"
                             >
                               <X className="h-4 w-4" aria-hidden="true" />
                             </button>
@@ -272,7 +272,7 @@ const JobSubmission = () => {
                               </label>
                               <p className="pl-1">or drag and drop</p>
                             </div>
-                            <p className="text-xs text-muted-foreground">PNG, JPG, GIF up to 10MB</p>
+                            <p className="text-xs text-foreground/75">PNG, JPG, GIF up to 10MB</p>
                           </>
                         )}
                       </div>
@@ -283,7 +283,7 @@ const JobSubmission = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full"
+                  className="w-full shadow-glow"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Submit Job Request"}

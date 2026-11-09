@@ -33,6 +33,7 @@ export default {
 				sage: 'hsl(var(--sage))',
 				forest: 'hsl(var(--forest))',
 				clay: 'hsl(var(--clay))',
+				gold: 'hsl(var(--primary-glow))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'

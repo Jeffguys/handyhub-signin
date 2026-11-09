@@ -173,6 +173,54 @@
 }
 
 @layer utilities {
+  /* Deep forest panel: a dark, high-contrast band with its own local tokens */
+  .deep-panel {
+    --background: 152 30% 10%;
+    --foreground: 40 40% 97%;
+    --card: 152 26% 14%;
+    --card-foreground: 40 40% 97%;
+    --popover: 152 26% 14%;
+    --popover-foreground: 40 40% 97%;
+    --secondary: 152 20% 18%;
+    --secondary-foreground: 40 34% 94%;
+    --muted: 152 20% 18%;
+    --muted-foreground: 150 18% 82%;
+    --accent: 152 22% 20%;
+    --accent-foreground: 40 34% 96%;
+    --border: 152 16% 32%;
+    --input: 152 22% 52%;
+    --ring: 42 98% 56%;
+    position: relative;
+    isolation: isolate;
+    background:
+      radial-gradient(85% 110% at 10% 0%, hsl(152 34% 18%) 0%, transparent 55%),
+      radial-gradient(75% 100% at 92% 100%, hsl(16 62% 20%) 0%, transparent 60%),
+      hsl(152 34% 7%);
+    color: hsl(var(--foreground));
+  }
+
+  .deep-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(hsl(40 40% 96% / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(40 40% 96% / 0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, hsl(0 0% 0% / 1) 0%, transparent 70%);
+    -webkit-mask-image: linear-gradient(to bottom, hsl(0 0% 0% / 1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .deep-glass {
+    background: linear-gradient(160deg, hsl(152 24% 17% / 0.92), hsl(152 32% 9% / 0.94));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid hsl(40 40% 96% / 0.10);
+    box-shadow: 0 30px 70px -30px hsl(152 45% 3% / 0.85),
+      inset 0 1px 0 hsl(40 40% 96% / 0.08);
+  }
+
   .perspective-hero {
     perspective: 1400px;
     perspective-origin: 50% 40%;
