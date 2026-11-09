@@ -73,7 +73,7 @@ const JobSubmission = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24 deep-panel">
       <div className="container px-4 md:px-6 mx-auto">
         <div 
           ref={ref}
@@ -91,7 +91,7 @@ const JobSubmission = () => {
               
               <div className="space-y-6 md:space-y-10">
                 <div className="flex items-start">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
                     <Camera className="h-5 w-5 text-primary" />
                   </div>
                   <div className="ml-4">
@@ -103,7 +103,7 @@ const JobSubmission = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
                     <Check className="h-5 w-5 text-primary" />
                   </div>
                   <div className="ml-4">
@@ -115,7 +115,7 @@ const JobSubmission = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
                     <Check className="h-5 w-5 text-primary" />
                   </div>
                   <div className="ml-4">
@@ -130,7 +130,7 @@ const JobSubmission = () => {
           </div>
           
           <div className="flex-1 w-full lg:w-1/2">
-            <div className="glass-card rounded-2xl p-8 shadow-xl">
+            <div className="deep-glass rounded-2xl p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-4">
                   <div>
