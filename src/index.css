@@ -15,7 +15,7 @@
     --popover: 40 40% 99%;
     --popover-foreground: 150 22% 12%;
 
-    --primary: 14 58% 48%;
+    --primary: 16 92% 54%;
     --primary-foreground: 40 40% 98%;
 
     --secondary: 38 28% 91%;
@@ -32,18 +32,20 @@
 
     --border: 38 22% 86%;
     --input: 38 22% 86%;
-    --ring: 14 58% 48%;
+    --ring: 16 92% 54%;
 
     --radius: 0.75rem;
 
     /* Hero 3D / motion design tokens */
-    --primary-glow: 26 62% 58%;
-    --sage: 132 20% 62%;
+    --primary-glow: 42 98% 56%;
+    --sky: 188 85% 45%;
+    --berry: 335 85% 58%;
+    --sage: 150 55% 50%;
     --forest: 152 28% 20%;
     --clay: 20 42% 66%;
     --hero-deep: 150 25% 12%;
-    --gradient-hero: radial-gradient(120% 120% at 50% 0%, hsl(42 45% 98%) 0%, hsl(40 32% 94%) 40%, hsl(132 16% 84%) 100%);
-    --gradient-primary: linear-gradient(135deg, hsl(var(--forest)), hsl(var(--primary)) 65%, hsl(var(--primary-glow)));
+    --gradient-hero: radial-gradient(120% 120% at 50% 0%, hsl(45 100% 96%) 0%, hsl(30 100% 92%) 40%, hsl(175 60% 85%) 100%);
+    --gradient-primary: linear-gradient(120deg, hsl(var(--berry)), hsl(var(--primary)) 50%, hsl(var(--primary-glow)));
     --gradient-sheen: linear-gradient(105deg, transparent 30%, hsl(0 0% 100% / 0.55) 48%, transparent 66%);
     --shadow-3d: 0 40px 80px -30px hsl(var(--hero-deep) / 0.45), 0 8px 24px -12px hsl(var(--primary) / 0.35);
     --shadow-glow: 0 0 60px hsl(var(--primary) / 0.35);
@@ -78,7 +80,9 @@
     --input: 150 12% 22%;
     --ring: 16 60% 52%;
 
-    --primary-glow: 26 58% 60%;
+    --primary-glow: 42 95% 58%;
+    --sky: 188 80% 50%;
+    --berry: 335 80% 62%;
     --sage: 132 16% 52%;
     --forest: 152 22% 30%;
     --clay: 20 34% 56%;

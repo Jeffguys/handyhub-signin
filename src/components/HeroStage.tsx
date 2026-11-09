@@ -1,43 +1,20 @@
-import { useRef } from "react";
-import { motion, useMotionTemplate, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 /**
- * Mouse-driven 3D stage. Children are laid out on separate Z planes,
- * so the whole hero tilts and parallaxes as one physical object.
+ * One-time 3D entrance: the hero swings in on a 3D arc for ~3s,
+ * then settles perfectly square and stays still.
  */
 const HeroStage = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
 
-  const px = useMotionValue(0);
-  const py = useMotionValue(0);
-  const spring = { stiffness: 120, damping: 20, mass: 0.6 };
-  const rotateY = useSpring(px, spring);
-  const rotateX = useSpring(py, spring);
-  const transform = useMotionTemplate`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-  const handleMove = (e: React.MouseEvent) => {
-    if (reduced || !ref.current) return;
-    const r = ref.current.getBoundingClientRect();
-    const nx = (e.clientX - r.left) / r.width - 0.5;
-    const ny = (e.clientY - r.top) / r.height - 0.5;
-    px.set(nx * 12);
-    py.set(-ny * 8);
-  };
-
-  const reset = () => {
-    px.set(0);
-    py.set(0);
-  };
-
   return (
-    <div
-      ref={ref}
-      onMouseMove={handleMove}
-      onMouseLeave={reset}
-      className="perspective-hero w-full"
-    >
-      <motion.div style={{ transform }} className="preserve-3d w-full will-change-transform">
+    <div className="perspective-hero w-full">
+      <motion.div
+        initial={reduced ? false : { rotateX: 18, rotateY: -22, scale: 0.92, opacity: 0 }}
+        animate={{ rotateX: [18, -6, 3, 0], rotateY: [-22, 10, -4, 0], scale: [0.92, 1.02, 1], opacity: 1 }}
+        transition={{ duration: 3, ease: [0.22, 1, 0.36, 1] }}
+        className="preserve-3d w-full"
+      >
         {children}
       </motion.div>
     </div>
