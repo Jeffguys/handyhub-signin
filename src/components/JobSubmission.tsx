@@ -233,7 +233,7 @@ const JobSubmission = () => {
                   
                   <div>
                     <span className="block text-sm font-medium mb-2">Upload Photo</span>
-                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-primary/40 rounded-lg bg-foreground/[0.04]">
+                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-gold/50 rounded-lg bg-foreground/[0.04]">
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
                           <div className="relative mx-auto">
