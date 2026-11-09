@@ -22,9 +22,9 @@ const Hero = () => {
     <section className="relative min-h-[100vh] flex items-center justify-center pt-24 pb-24 overflow-hidden hero-surface">
       {/* Ambient depth layers */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 -right-24 h-[520px] w-[520px] rounded-full bg-primary/20 blur-[120px] animate-orb" />
-        <div className="absolute -bottom-52 -left-24 h-[560px] w-[560px] rounded-full bg-sage/30 blur-[130px] animate-orb [animation-delay:-8s]" />
-        <div className="absolute top-1/3 left-1/4 h-[380px] w-[380px] rounded-full bg-forest/10 blur-[120px] animate-orb [animation-delay:-14s]" />
+        <div className="absolute -top-40 -right-24 h-[520px] w-[520px] rounded-full bg-primary/40 blur-[120px]" />
+        <div className="absolute -bottom-52 -left-24 h-[560px] w-[560px] rounded-full bg-sky/40 blur-[130px]" />
+        <div className="absolute top-1/3 left-1/4 h-[380px] w-[380px] rounded-full bg-berry/25 blur-[120px]" />
         <div className="absolute inset-x-0 bottom-0 h-[45vh] hero-grid opacity-70" />
       </div>
 
@@ -51,8 +51,8 @@ const Hero = () => {
               className="relative preserve-3d"
               style={{ transform: 'translateZ(140px)' }}
             >
-              <div className="relative animate-float">
-                <div className="absolute inset-0 -z-10 rounded-full bg-sage/40 blur-3xl scale-90" />
+              <div className="relative">
+                <div className="absolute inset-0 -z-10 rounded-full bg-primary-glow/50 blur-3xl scale-90" />
                 <img
                   src={tmhLogo}
                   alt="Truckee Meadows Handyman TMH crest logo"
@@ -65,20 +65,22 @@ const Hero = () => {
               {/* Orbiting 3D chips */}
               <motion.div
                 aria-hidden
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                initial={{ opacity: 0, x: -60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1, ease: [0.22, 1, 0.36, 1] }}
                 className="hidden md:flex absolute -left-28 top-8 items-center gap-2 rounded-2xl border border-border bg-card/80 backdrop-blur px-4 py-3 shadow-3d"
-                style={{ transform: 'translateZ(200px) rotateY(14deg)' }}
+                style={{ transform: 'translateZ(0px)' }}
               >
                 <span className="text-2xl font-bold text-gradient-primary">Got Work?</span>
               </motion.div>
 
               <motion.div
                 aria-hidden
-                animate={{ y: [0, 14, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 className="hidden md:flex absolute -right-32 bottom-10 items-center gap-2 rounded-2xl border border-border bg-card/80 backdrop-blur px-4 py-3 shadow-3d"
-                style={{ transform: 'translateZ(200px) rotateY(-14deg)' }}
+                style={{ transform: 'translateZ(0px)' }}
               >
                 <ShieldCheck className="h-6 w-6 text-primary" />
                 <span className="text-xl font-bold text-gradient-primary">5 Year Warranty</span>
@@ -96,7 +98,7 @@ const Hero = () => {
                 Get Your Home Repairs Done
                 <span className="relative ml-2 inline-block">
                   <span className="relative z-10 text-gradient-primary">Right</span>
-                  <span className="absolute bottom-1 left-0 h-3 w-full rounded-full bg-primary/20" />
+                  <span className="absolute bottom-1 left-0 h-3 w-full rounded-full bg-primary-glow/50" />
                 </span>
                 <span className="block mt-3 text-2xl md:text-3xl font-semibold text-foreground/80">
                   Licensed &amp; insured, locally in Reno / Sparks

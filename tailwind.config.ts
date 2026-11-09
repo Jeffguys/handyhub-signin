@@ -28,6 +28,8 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				sky: 'hsl(var(--sky))',
+				berry: 'hsl(var(--berry))',
 				sage: 'hsl(var(--sage))',
 				forest: 'hsl(var(--forest))',
 				clay: 'hsl(var(--clay))',
