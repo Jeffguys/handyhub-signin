@@ -92,7 +92,7 @@ const JobSubmission = () => {
               <div className="space-y-6 md:space-y-10">
                 <div className="flex items-start">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
-                    <Camera className="h-5 w-5 text-primary" />
+                    <Camera className="h-5 w-5 text-gold" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Upload Job Photos</h3>
@@ -104,7 +104,7 @@ const JobSubmission = () => {
                 
                 <div className="flex items-start">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
-                    <Check className="h-5 w-5 text-primary" />
+                    <Check className="h-5 w-5 text-gold" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Detailed Assessment</h3>
@@ -116,7 +116,7 @@ const JobSubmission = () => {
                 
                 <div className="flex items-start">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 ring-1 ring-primary/30">
-                    <Check className="h-5 w-5 text-primary" />
+                    <Check className="h-5 w-5 text-gold" />
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">20 Minutes Quick Response</h3>
