@@ -84,7 +84,7 @@ const JobSubmission = () => {
         >
           <div className="flex-1 w-full lg:w-1/2">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-bold mb-6">Submit Your Project</h2>
+              <h2 className="text-3xl font-bold mb-6 text-balance">Submit Your Project</h2>
               <p className="text-muted-foreground mb-8">
                 Tell us about your repair needs and upload a photo of the job. Our team will review your request and get back to you with a quote.
               </p>
@@ -233,7 +233,7 @@ const JobSubmission = () => {
                   
                   <div>
                     <span className="block text-sm font-medium mb-2">Upload Photo</span>
-                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-border rounded-lg">
+                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed border-primary/40 rounded-lg bg-foreground/[0.04]">
                       <div className="space-y-1 text-center">
                         {imagePreview ? (
                           <div className="relative mx-auto">
@@ -246,7 +246,7 @@ const JobSubmission = () => {
                               type="button"
                               aria-label="Clear image"
                               onClick={handleClearImage}
-                              className="absolute -top-2 -right-2 bg-card rounded-full p-1 shadow-md"
+                              className="absolute -top-2 -right-2 bg-card rounded-full p-1 shadow-md ring-1 ring-border"
                             >
                               <X className="h-4 w-4" aria-hidden="true" />
                             </button>
@@ -283,7 +283,7 @@ const JobSubmission = () => {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full"
+                  className="w-full shadow-glow"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Submit Job Request"}
